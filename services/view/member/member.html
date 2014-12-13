@@ -1,0 +1,102 @@
+{literal}
+<script language='javascript' type='text/javascript'>
+
+
+$(document).on('click','.deleteData', function(){
+    var userid = $(this).attr('attr');
+    
+    var conf = confirm('Delete member ?');
+    if (!conf) return false;
+
+    $.post(basedomain+'member/deleteMember', {userid:userid}, function(data){
+
+        if (data.status){
+            window.location.href=basedomain+'member';
+        }
+
+    },"JSON");
+})
+
+</script>
+{/literal}
+
+			<div id="content" class="span10">
+			<!-- content starts -->
+			
+
+			<div>
+				<ul class="breadcrumb">
+					<li>
+						<a href="#">Home</a> <span class="divider">/</span>
+					</li>
+					<li>
+						<a href="#">Tables</a>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="row-fluid sortable">		
+				<div class="box span12">
+					<div class="box-header well" data-original-title>
+						<h2><i class="icon-bullhorn"></i> Info</h2>
+						<div class="box-icon">
+							<a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a>
+							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
+							<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+						</div>
+					</div>
+					<div class="box-content">
+						<table class="table table-striped table-bordered bootstrap-datatable datatable">
+						  <thead>
+							  {if $user.usertype==1}
+							  <tr>
+								  <th colspan="5"><a href="{$basedomain}member/add" class="btn btn-primary" ><i class="icon icon-white icon-add"></i> Add Member</a></th>
+							  </tr>
+							  {/if}
+							  <tr>
+								  <th>Name</th>
+								  <th>Date registered</th>
+								  <th>Role</th>
+								  <th>Status</th>
+								  <th>Actions</th>
+							  </tr>
+						  </thead>   
+						  <tbody>
+							
+						  	{foreach $userlist as $val}
+							<tr>
+								<td><a class="" href="{$basedomain}member/viewdetail/?id={$val.id}">
+										<i class="icon-edit icon-white"></i>  
+										{$val.name}                                            
+									</a></td>
+								<td class="center">{$val.register_date}</td>
+								<td class="center">Member</td>
+								<td class="center">
+									<span class="label label-success">Active</span>
+								</td>
+								<td class="center">
+									{*}<a class="btn btn-success" href="#">
+										<i class="icon-zoom-in icon-white"></i>  
+										View                                            
+									</a>{/*}
+									<a class="btn btn-info" href="{$basedomain}member/edit/?id={$val.id}">
+										<i class="icon-edit icon-white"></i>  
+										Edit                                            
+									</a>
+									<a class="btn btn-danger deleteData" href="#" attr="{$val.id}">
+										<i class="icon-trash icon-white " ></i> 
+										Delete
+									</a>
+								</td>
+							</tr>
+							{/foreach}
+						  </tbody>
+					  </table>            
+					</div>
+				</div><!--/span-->
+			
+			</div><!--/row-->
+
+			
+					<!-- content ends -->
+			</div><!--/#content.span10-->

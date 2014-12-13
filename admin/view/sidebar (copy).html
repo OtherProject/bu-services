@@ -1,0 +1,218 @@
+
+<div id="sidebar-wrapper" class="collapse sidebar-collapse">
+	
+	<div id="search">
+		<form>
+			<input class="form-control input-sm" type="text" name="search" placeholder="Search..." />
+
+			<button type="submit" id="search-btn" class="btn"><i class="fa fa-search"></i></button>
+		</form>		
+	</div> <!-- #search -->
+
+	<nav id="sidebar">		
+		
+		<ul id="main-nav" class="open-active">			
+			
+			
+			<li class="dropdown active">
+				<a href="javascript:;">
+					<i class="fa fa-file-text"></i>
+					Article 
+					<span class="caret"></span>
+				</a>				
+				<ul class="sub-nav">
+					<li>
+						<a href="{$basedomain}article/addarticle">
+							<i class="fa fa-plus"></i> 
+							Add New Article
+						</a>
+					</li>
+					<li>
+						<a href="{$basedomain}home">
+							<i class="fa fa-list-alt"></i> 
+							Article List
+						</a>
+					</li>
+					<li>
+						<a href="{$basedomain}article/profil">
+							<i class="fa fa-list-alt"></i> 
+							Profile
+						</a>
+					</li>
+					<li>
+						<a href="{$basedomain}article/kontak">
+							<i class="fa fa-list-alt"></i> 
+							Kontak
+						</a>
+					</li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="javascript:;">
+					<i class="fa fa-user"></i>
+					User Management
+					<span class="caret"></span>
+				</a>				
+				<ul class="sub-nav">
+					<li>
+						<a href="{$basedomain}user/add">
+							<i class="fa fa-plus"></i> 
+							Tambah User
+						</a>
+					</li>
+					<li>
+						<a href="{$basedomain}user">
+							<i class="fa fa-list"></i> 
+							List User
+						</a>
+					<li>
+						
+				</ul>
+			</li>	
+			
+
+			<li class="dropdown">
+				<a href="{$basedomain}evaluasi">
+					<i class="fa fa-check"></i>
+					Evaluasi
+					<span class="caret"></span>
+				</a>
+				
+				<ul class="sub-nav">
+					<li>
+						<a href="{$basedomain}evaluasi">
+							<i class="fa fa-list"></i> 
+							Evaluasi Label
+						</a>
+					</li>
+					<li>
+						<a href="{$basedomain}evaluasi/iklanmlr">
+							<i class="fa fa-list"></i> 
+							Evaluasi Iklan MLR
+						</a>
+					<li>
+					<li>
+						<a href="{$basedomain}evaluasi/iklantv">
+							<i class="fa fa-list"></i> 
+							Evaluasi Iklan TV
+						</a>
+					<li>
+					<li>
+						<a href="{$basedomain}evaluasi/iklanphw">
+							<i class="fa fa-list"></i> 
+							Evaluasi PHW
+						</a>
+					<li>	
+				</ul>				
+			</li>	
+			<li class="dropdown">
+				<a href="javascript:;">
+					<i class="fa fa-user"></i>
+					Pelaporan Industri
+					<span class="caret"></span>
+				</a>				
+				<ul class="sub-nav">
+					<li>
+						<a href="{$basedomain}pelaporan/kemasan">
+							<i class="fa fa-list"></i> 
+							Kemasan
+						</a>
+					</li>
+					<li>
+						<a href="{$basedomain}pelaporan/nikotin">
+							<i class="fa fa-list"></i> 
+							Nikotin dan Tar
+						</a>
+					<li>
+						
+				</ul>
+			</li>	
+			{*}
+			<li class="">
+				<a href="{$basedomain}pelaporan">
+					<i class="fa fa-folder"></i>
+					Pelaporan Industri
+				</a>				
+			</li>	
+			{/*}
+			<li class="dropdown">
+				<a href="javascript:;">
+					<i class="fa fa-user"></i>
+					Importing
+					<span class="caret"></span>
+				</a>				
+				<ul class="sub-nav">
+					<li>
+						<a href="{$basedomain}import">
+							<i class="fa fa-list"></i> 
+							Import Data evaluasi
+						</a>
+					</li>
+					<li>
+						<a href="{$basedomain}import">
+							<i class="fa fa-list"></i> 
+							Import Data Merek
+						</a>
+					<li>
+						
+				</ul>
+			</li>
+			{*}
+			<li class="">
+				<a href="{$basedomain}import">
+					<i class="fa fa-folder"></i>
+					Import Data XLS
+				</a>				
+			</li>
+			{/*}
+			<li class="dropdown">
+				<a href="javascript:;">
+					<i class="fa fa-user"></i>
+					Data Reference
+					<span class="caret"></span>
+				</a>				
+				<ul class="sub-nav">
+					<li>
+						<a href="{$basedomain}import">
+							<i class="fa fa-list"></i> 
+							Data Industri
+						</a>
+					</li>
+					<li>
+						<a href="{$basedomain}import">
+							<i class="fa fa-list"></i> 
+							Data Laboratorium
+						</a>
+					</li>
+				</ul>
+			</li>
+
+			{if $menu}
+			{foreach $menu as $key => $val}
+
+				<li class="dropdown">
+					<a href="javascript:;">
+						<i class="fa fa-user"></i>
+						{$key}
+						<span class="caret"></span>
+					</a>				
+					<ul class="sub-nav">
+						{foreach $val as $value}
+						<li>
+							<a href="{$basedomain}import">
+								<i class="fa fa-list"></i> 
+								{$value.menuDesc}
+							</a>
+						</li>
+						{/foreach}
+					</ul>
+				</li>
+			{/foreach}
+
+			{/if}
+		</ul>
+				
+	</nav> <!-- #sidebar -->
+
+</div> <!-- /#sidebar-wrapper -->

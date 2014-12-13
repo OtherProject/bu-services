@@ -1,0 +1,106 @@
+test log
+load excel begin
+file exist = /home/ovancop/Data/htdocs/dev.review/libs/excel/excel_reader.phpfilename =/tmp/php1nGEXW
+load excel success
+parse data excel success
+clean data
+fetch excel success
+store master data
+test log
+load excel begin
+excel failed
+test log
+test log
+test log
+load excel begin
+file exist = /home/ovancop/Data/htdocs/dev.review/libs/excel/excel_reader.phpfilename =/tmp/phpI94Xap
+load excel success
+parse data excel success
+clean data
+fetch excel success
+store master data
+test log
+load excel begin
+file exist = /home/ovancop/Data/htdocs/dev.review/libs/excel/excel_reader.phpfilename =/tmp/phprExfyd
+load excel success
+parse data excel success
+clean data
+fetch excel success
+load excel begin
+file exist = /home/ovancop/Data/htdocs/dev.review/libs/excel/excel_reader.phpfilename =/tmp/phpElOEgW
+load excel success
+parse data excel success
+clean data
+fetch excel success
+store master data
+test log
+test log
+test log
+file ready to upload
+upload success
+test log
+test log
+test log
+file ready to upload
+upload success
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log
+test log

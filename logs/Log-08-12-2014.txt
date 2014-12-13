@@ -1,0 +1,9 @@
+a:2:{s:5:"email";s:21:"submit.ovan@gmail.com";s:5:"token";s:40:"330f8776a3954fa05e0df936000f375c63f6dd90";}
+ready to send mail
+status send = 1
+Array
+czoxMDc6ImE6Mjp7czo1OiJlbWFpbCI7czoyMToic3VibWl0Lm92YW5AZ21haWwuY29tIjtzOjU6InRva2VuIjtzOjQwOiIzMzBmODc3NmEzOTU0ZmEwNWUwZGY5MzYwMDBmMzc1YzYzZjZkZDkwIjt9Ijs=
+czoxMDc6ImE6Mjp7czo1OiJlbWFpbCI7czoyMToic3VibWl0Lm92YW5AZ21haWwuY29tIjtzOjU6InRva2VuIjtzOjQwOiIzMzBmODc3NmEzOTU0ZmEwNWUwZGY5MzYwMDBmMzc1YzYzZjZkZDkwIjt9Ijs=
+czoxMDc6ImE6Mjp7czo1OiJlbWFpbCI7czoyMToic3VibWl0Lm92YW5AZ21haWwuY29tIjtzOjU6InRva2VuIjtzOjQwOiIzMzBmODc3NmEzOTU0ZmEwNWUwZGY5MzYwMDBmMzc1YzYzZjZkZDkwIjt9Ijs=
+account user submit.ovan@gmail.com created
+account user submit.ovan@gmail.com created

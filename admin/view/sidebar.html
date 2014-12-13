@@ -1,0 +1,45 @@
+
+<div id="sidebar-wrapper" class="collapse sidebar-collapse">
+	
+	<div id="search">
+		<form>
+			<input class="form-control input-sm" type="text" name="search" placeholder="Search..." />
+
+			<button type="submit" id="search-btn" class="btn"><i class="fa fa-search"></i></button>
+		</form>		
+	</div> <!-- #search -->
+
+	<nav id="sidebar">		
+		
+		<ul id="main-nav" class="open-active">			
+			
+			{if $menu}
+			{$no = 1}
+			{foreach $menu as $key => $val}
+
+				<li class="dropdown {*}{if $no==1}active{/if}{/*}">
+					<a href="javascript:;">
+						<i class="fa fa-user"></i>
+						{$key}
+						<span class="caret"></span>
+					</a>				
+					<ul class="sub-nav">
+						{foreach $val as $value}
+						<li>
+							<a href="{$basedomain}{$value.menuPath}">
+								<i class="{$value.menuIcon}"></i> 
+								{$value.menuDesc}
+							</a>
+						</li>
+						{/foreach}
+					</ul>
+				</li>
+				{$no = $no +1}
+			{/foreach}
+
+			{/if}
+		</ul>
+				
+	</nav> <!-- #sidebar -->
+
+</div> <!-- /#sidebar-wrapper -->

@@ -1,0 +1,85 @@
+			<div id="content" class="span10">
+			<!-- content starts -->
+			
+
+			<div>
+				<ul class="breadcrumb">
+					<li>
+						<a href="#">Home</a> <span class="divider">/</span>
+					</li>
+					<li>
+						<a href="#">Form</a>
+					</li>
+				</ul>
+			</div>
+			
+			<form method="post" action="{$basedomain}member/{if $edit}edit{else}add{/if}" enctype="multipart/form-data">
+			<div class="row-fluid sortable">
+				<div class="box span12">
+					<div class="box-header well" data-original-title>
+						<h2><i class="icon-edit"></i> Add member</h2>
+						<div class="box-icon">
+							<a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a>
+							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
+							<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+						</div>
+					</div>
+					<div class="box-content">
+						<div class="form-horizontal">
+							<fieldset>
+							  <div class="control-group">
+								<label class="control-label" for="disabledInput">Name</label>
+								<div class="controls">
+								  <input class="input-xlarge disabled" id="disabledInput" type="text" name="name"   value="{$peserta.name}">
+								</div>
+							  </div>
+                              <div class="control-group">
+								<label class="control-label" for="disabledInput">Username</label>
+								<div class="controls">
+								  <input class="input-xlarge disabled" id="disabledInput1" type="text" name="username"   value="{$peserta.username}" {if $peserta.username}disabled{/if}>
+								</div>
+							  </div>
+                              <div class="control-group">
+								<label class="control-label" for="disabledInput">Password</label>
+								<div class="controls">
+								  <input class="input-xlarge disabled" id="disabledInput2" type="password" name="password"  value="">
+								</div>
+							  </div>
+                              <div class="control-group">
+								<label class="control-label" for="disabledInput">Type</label>
+								<div class="controls">
+								  	<select name="usertype">
+								  		<option value="1" {if $peserta.usertype==1}selected="selected"{/if}>Admin</option>
+								  		<option value="2" {if $peserta.usertype==2}selected="selected"{/if}>Reviewer</option>
+								  	</select>
+								</div>
+							  </div>
+							  <div class="control-group">
+								<label class="control-label" for="disabledInput">TTD</label>
+								<div class="controls">
+								  	<input class="input-xlarge disabled" id="disabledInput2" type="file" name="ttd"  value="">
+								</div>
+							  </div>
+							{if $peserta.image_profile}
+                              	<div class="control-group">
+								<label class="control-label" for="disabledInput">Image</label>
+								<div class="controls">
+								  	<img src="{$app_domain}public_assets/{$peserta.image_profile}" width="200px">
+								</div>
+							  </div>
+							{/if}
+							<div class="form-actions">
+								<input type="hidden" name="token" value="1"/>
+								<input type="hidden" name="idpeserta" value="{$peserta.id}"/>
+								<button class="btn btn-primary" id="backtolist" type="submit">Save</button>
+								</div>
+						  </div>
+					
+					</div>
+				</div><!--/span-->
+			
+			</div><!--/row-->
+			</form>
+			
+					<!-- content ends -->
+			</div><!--/#content.span10-->

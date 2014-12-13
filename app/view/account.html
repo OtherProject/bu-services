@@ -1,0 +1,138 @@
+<br>
+
+
+<section>
+    <div class="container">  
+<div class="content-container">
+<div class="row">
+
+  <form method="post" action="{$basedomain}account">
+  <div class="col-md-6">
+        <div class="portlet">
+        
+          <div class="portlet-header">
+
+            <h3>
+              <i class="fa fa-file"></i>
+              Penanggung jawab account
+            </h3>
+
+          </div> <!-- /.portlet-header -->
+        
+          <div class="portlet-content">
+        
+            <div class="col-sm-6">
+              <div class="form-group">
+              <label for="text-input">Nama Depan</label>
+                  <input type="text" name="namaDepan" class="form-control" value="{$user.namaDepan}" data-required="true" />
+              </div>
+            </div>  
+            <div class="col-sm-6">
+              <div class="form-group">
+              <label for="text-input">Nama Belakang</label>
+                  <input type="text" name="namaBelakang" class="form-control" value="{$user.namaBelakang}" data-required="true" />
+              </div>
+            </div>  
+            <div class="col-md-12">
+              <div class="form-group">
+              <label for="text-input">Instansi</label>
+                  <input type="text" name="instansi" class="form-control" value="{$user.instansi}" />
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <div class="form-group">
+              <label for="text-input">Alamat</label>
+                  <input type="text" name="alamat" class="form-control" value="{$user.alamat}" />
+              </div>
+            </div>
+
+            
+            <div class="col-md-12">
+              <div class="form-group">
+              <label for="text-input">No Telepon</label>
+                  <input type="text" name="noTelepon" class="form-control" value="{$user.noTelepon}" />
+              </div>
+            </div>
+            
+            <div class="col-md-12">
+              <div class="form-group">
+              <label for="text-input">Alamat Email : </label>
+                  <strong>{$user.email}</strong>
+              </div>
+            </div>
+            <div class='span5'><hr></div>
+            <button id="btn-dis" class="btn btn-info" type="submit">
+            <i class="fa fa-save"></i>
+            Simpan Data
+            </button>
+          </div>
+
+        </div>
+          
+        
+      </div>
+      </form>
+    
+      <div class="col-md-6">
+        <div class="portlet">
+        
+          <div class="portlet-header">
+
+            <h3>
+              <i class="fa fa-file"></i>
+              Data Aplikasi
+            </h3>
+
+          </div> <!-- /.portlet-header -->
+        
+          <div class="portlet-content">
+        
+            <div class="col-sm-12">
+              <div class="form-group">
+              <label for="text-input">Nama Aplikasi</label>
+                  <input type="text" name="namaIndustri" class="form-control" value="{$user.appName}" disabled />
+              </div>
+            
+            </div>
+            <div class="col-sm-12">
+              <div class="form-group">
+              <label for="text-input">Token</label>
+              <br>
+                  <span>{$user.token} </span>
+              </div>
+            
+            </div>
+            <div class="col-sm-12">
+              <div class="form-group">
+              <label for="text-input">Secret Key</label>
+              <br>
+                  <span>{$user.secretKey} </span>
+              </div>
+                  
+              </div>
+
+            <div class="col-sm-12">
+              <div class="form-group">
+              <label for="text-input">API Verified</label>
+              <br>
+                  {foreach $rule as $val}
+                  {foreach $val as $var}
+                  <span>{$var.alias} </span><br>
+                  {/foreach}
+                  {/foreach}
+              </div>
+                  
+              </div>
+
+            </div>
+        </div>
+    </div>  
+    
+      </div>
+      <br>
+
+</div>
+</div>
+</section>
+

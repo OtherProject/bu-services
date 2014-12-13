@@ -1,0 +1,105 @@
+
+<script type="text/javascript">
+
+  {literal}
+
+    $(document).on('change', '.pilihprov', function(){
+
+
+      var id = $(this).val();
+
+      $.post(basedomain+'account/ajax',{kode_wilayah:id}, function(data){
+
+        var html = "";
+
+        if (data.status==true){
+          $.each(data.res, function(i,val){
+
+            html += "<option value='"+val.kode_wilayah+"'>"+val.nama_wilayah+"</option>";
+
+          })
+
+          $('.pilihkab').html(html);
+        } 
+        
+      }, "JSON")  
+
+    })
+  {/literal}
+</script>
+
+<br>
+
+<section>
+    <div class="container">  
+      <div class="center">
+        <h2>Daftar Field {$tabel}</h2>
+        <p class="lead">&nbsp;</p>
+      </div>
+
+        <form method="post" action="">
+
+          <div class="content-container">
+
+            <div class="row" style="margin-top:10px;">
+              <div class="col-md-5">
+                <div class="form-group">
+                <label for="text-input">Tabel Alias : </label>
+                    <input type="text" name="alias" class="form-control" value="{$alias.alias}" />
+                </div>
+              </div>
+              <div class="col-md-5">
+                <div class="form-group">
+                <label for="text-input">Field Primary : </label>
+                    <input type="text" name="fieldPrimary" class="form-control" value="{$alias.fieldPrimary}" />
+                </div>
+              </div>
+              <div class="col-md-10">
+                <div class="span6" style="border:1px solid #bbb;border-radius:10px;padding:10px 20px 10px 20px;">
+                  <table class="table">
+                      
+                    <thead>
+                    <tr>
+                      <th align="center">Field</th>
+                      <th align="center">Aktifkan</th>
+                      
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {foreach $data as $var}
+                    <tr>
+                      
+                      <td>{$var}</td>
+                      <td>
+                        <input type="checkbox" name="field[]" class="form-control " value="{$var}" {if $active}{if in_array($var, $active)} checked="checked" {/if}{/if}/>
+                      </td>
+                      
+                    </tr>
+                    {/foreach}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            
+            <br>
+            <a href="javascript:void(0)" onclick="history.back()">
+            <button id="btn-dis" class="btn btn-warning" type="button">
+            <i class="fa fa-save"></i>
+            Kembali
+            </button>
+            </a>
+            <input type="hidden" name="idDatabase" value="{$db}">
+            <input type="hidden" name="tabel" value="{$tabel}">
+            <button id="btn-dis" class="btn btn-info" type="submit" name="simpan">
+            <i class="fa fa-save"></i>
+            Simpan Perubahan
+            </button></a>
+                
+                
+          </div>
+
+        </form>
+    </div>
+</section>

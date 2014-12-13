@@ -1,0 +1,22 @@
+<div class="row-fluid">
+				<div class="span12 center login-header">
+					<h2>Services Beasiswa Unggulan</h2>
+				</div><!--/span-->
+			</div><!--/row-->
+			
+			<div class="row-fluid">
+				<div class="well span5 center login-box">
+					<div class="alert alert-info">
+						Your APP token
+					</div>
+					<form class="form-horizontal" action="{$basedomain}login/local" method="post">
+						<fieldset>
+							{if $status}
+								{if $data}
+									{$data.token}
+								{/if}
+							{/if}
+						</fieldset>
+					</form>
+				</div><!--/span-->
+			</div><!--/row-->

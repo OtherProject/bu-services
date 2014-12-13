@@ -1,0 +1,59 @@
+<section id="recent-works">
+        <div class="container">
+            <div class=" wow fadeInDown">
+                <h2 align="center" >API Pendaftaran</h2>
+                <label>Request Method</label>
+                <p class="lead" align="justify"> 
+                
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+                <div class="col-md-6">
+                    <p class="lead" align="justify"> 
+                    
+                    <label>Send Data</label> <br>
+
+                    include 'portal-services.php';<br><br>
+
+                    Define Your APP ID :<br>
+                    $param['token'] = 'YOUR TOKEN ACCESS';<br>
+                    $param['secretKey'] = 'YOUR SECRET KEY';<br><br>
+
+                    Get Data :<br>
+                    $param['apiID'] = 'API ID';<br>
+                    $param['method'] = 'METHOD';<br>
+                    http://portal.com/services/api/?req=cnjahuwqnckh21931
+
+                </p>
+                </div>
+                <div class="col-md-6">
+                    <p class="lead" align="justify"> 
+                
+                    <label>Response</label> <br>
+                    Array
+                </p>
+                </div>
+            </div>
+
+            <div class="row">
+            {*}
+            {if $data}
+                {foreach $data as $val } 
+                <div class="col-xs-12 col-sm-4 col-md-3">
+                    <div class="recent-work-wrap" style="width:250px;height:260px;border:1px solid #b8c4e8;">
+                        <img class="img-responsive" src="{$basedomain}{$val.image}" alt="" style="position:center">
+                        <div class="overlay">
+                            <div class="recent-work-inner">
+                                <h3><a href="#">Business theme</a> </h3>
+                                <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
+                                <a class="preview" href="{$basedomain}about_us/partner/?id={$val.id}" rel="prettyPhoto"><i class="fa fa-eye"></i> Detail</a>
+                            </div> 
+                        </div>
+                    </div>
+                </div>   
+            
+                {/foreach}
+            {/if} 
+            {/*}
+            </div><!--/.row-->
+        </div><!--/.container-->
+    </section><!--/#recent-works-->

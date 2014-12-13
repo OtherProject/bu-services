@@ -1,0 +1,103 @@
+test log
+test log
+test log
+test log
+test log
+load excel begin
+file exist = /home/ovancop/Data/htdocs/dev.review/libs/excel/excel_reader.phpfilename =/tmp/phpLN09WP
+load excel success
+parse data excel success
+clean data
+fetch excel success
+store master data
+test log
+load excel begin
+file exist = /home/ovancop/Data/htdocs/dev.review/libs/excel/excel_reader.phpfilename =/tmp/phpAj9GLA
+load excel success
+parse data excel success
+clean data
+fetch excel success
+store master data
+test log
+load excel begin
+file exist = /home/ovancop/Data/htdocs/dev.review/libs/excel/excel_reader.phpfilename =/tmp/phpGwWUcV
+load excel success
+parse data excel success
+clean data
+load excel begin
+file exist = /home/ovancop/Data/htdocs/dev.review/libs/excel/excel_reader.phpfilename =/tmp/phpRywWHg
+load excel success
+parse data excel success
+clean data
+fetch excel success
+load excel begin
+file exist = /home/ovancop/Data/htdocs/dev.review/libs/excel/excel_reader.phpfilename =/tmp/php1NhPpu
+load excel success
+parse data excel success
+clean data
+fetch excel success
+load excel begin
+file exist = /home/ovancop/Data/htdocs/dev.review/libs/excel/excel_reader.phpfilename =/tmp/phpJW80jI
+load excel success
+parse data excel success
+clean data
+fetch excel success
+load excel begin
+file exist = /home/ovancop/Data/htdocs/dev.review/libs/excel/excel_reader.phpfilename =/tmp/phpaFy2VH
+load excel success
+parse data excel success
+clean data
+fetch excel success
+load excel begin
+file exist = /home/ovancop/Data/htdocs/dev.review/libs/excel/excel_reader.phpfilename =/tmp/php9Jr1oE
+load excel success
+parse data excel success
+clean data
+fetch excel success
+load excel begin
+file exist = /home/ovancop/Data/htdocs/dev.review/libs/excel/excel_reader.phpfilename =/tmp/php3Cz8Tw
+load excel success
+parse data excel success
+clean data
+fetch excel success
+load excel begin
+file exist = /home/ovancop/Data/htdocs/dev.review/libs/excel/excel_reader.phpfilename =/tmp/phpOZLwFx
+load excel success
+parse data excel success
+clean data
+fetch excel success
+load excel begin
+file exist = /home/ovancop/Data/htdocs/dev.review/libs/excel/excel_reader.phpfilename =/tmp/phpQ2nxmd
+load excel success
+parse data excel success
+clean data
+fetch excel success
+load excel begin
+file exist = /home/ovancop/Data/htdocs/dev.review/libs/excel/excel_reader.phpfilename =/tmp/phpkZfcv8
+load excel success
+parse data excel success
+clean data
+fetch excel success
+load excel begin
+file exist = /home/ovancop/Data/htdocs/dev.review/libs/excel/excel_reader.phpfilename =/tmp/phpClA13a
+load excel success
+parse data excel success
+clean data
+fetch excel success
+load excel begin
+file exist = /home/ovancop/Data/htdocs/dev.review/libs/excel/excel_reader.phpfilename =/tmp/phpGLH5w8
+load excel success
+parse data excel success
+clean data
+fetch excel success
+store master data
+test log
+test log
+load excel begin
+file exist = /home/ovancop/Data/htdocs/dev.review/libs/excel/excel_reader.phpfilename =/tmp/phpL9eBhD
+load excel success
+parse data excel success
+clean data
+fetch excel success
+store master data
+test log

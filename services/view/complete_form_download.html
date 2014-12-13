@@ -1,0 +1,121 @@
+			<div id="content" class="span10">
+			<!-- content starts -->
+			
+
+			<div>
+				<ul class="breadcrumb">
+					<li>
+						<a href="#">Home</a> <span class="divider">/</span>
+					</li>
+					<li>
+						<a href="#">Form</a>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="row-fluid sortable">
+				<div class="box span12">
+					<div class="box-header well" data-original-title>
+						<h2><i class="icon-edit"></i> Data Administrasi P3SWOT</h2>
+						<div class="box-icon">
+							<a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a>
+							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
+							<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+						</div>
+					</div>
+					<div class="box-content">
+						<form class="form-horizontal" method="post" action="{$basedomain}download/getData">
+							<fieldset>
+							  <div class="control-group">
+								<label class="control-label" for="disabledInput">ID</label>
+								<div class="controls">
+								  <input class="input-xlarge disabled" id="disabledInput" type="text" name="id"  disabled="" value="{$pendaftar->idpendaftaran}">
+								</div>
+							  </div>
+                              <div class="control-group">
+								<label class="control-label" for="disabledInput">Nama</label>
+								<div class="controls">
+								  <input class="input-xlarge disabled" id="disabledInput1" type="text" name="nama"  disabled="disabled" value="{$pendaftar->nama_lengkap}">
+								</div>
+							  </div>
+                              <div class="control-group">
+								<label class="control-label" for="disabledInput">Kategori</label>
+								<div class="controls">
+								  <input class="input-xlarge disabled" id="disabledInput2" type="text" name="kategori" disabled="" value="{$pendaftar->bidang}">
+								</div>
+							  </div>
+                              <div class="control-group">
+								<label class="control-label" for="disabledInput">Institusi</label>
+								<div class="controls">
+								  <input class="input-xlarge disabled" id="disabledInput3" type="text" name="institusi"  disabled="" value="{$pendaftar->nama_instansi}">
+								</div>
+							  </div>
+                              <div class="control-group">
+								<label class="control-label" for="focusedInput">No Surat Lulus</label>
+								<div class="controls">
+								  <input class="input-xlarge disabled" id="prependedInput1" name="no_sk" type="text" value="{$pendaftar->no_sk}" disabled="disabled">
+								</div>
+							  </div>
+                              <div class="control-group">
+							    <label class="control-label" for="date01">Tgl Surat Lulus</label>
+							    <div class="controls">
+								  <input type="text" class="input-xlarge datepicker" name="tgl_sk" value="{$pendaftar->tgl_sk}" disabled="disabled">
+							    </div>
+							  </div>
+                              <div class="control-group">
+								<label class="control-label" for="focusedInput">No Kontrak</label>
+								<div class="controls">
+								  <input class="input-xlarge disabled" id="prependedInput2" name="kontrak" type="text" value="{$pendaftar->kontrak}" disabled="disabled">
+								</div>
+							  </div>
+                              <div class="control-group">
+							    <label class="control-label" for="date02">Tgl Kontrak</label>
+							    <div class="controls">
+								  <input type="text" class="input-xlarge datepicker" id="date02" name="tgl_kontrak" value="{$pendaftar->tgl_kontrak}" disabled="disabled">
+							    </div>
+							  </div>
+                              <div class="control-group">
+								<label class="control-label" for="focusedInput">Nilai Kontrak</label>
+								<div class="controls">
+								  <input class="input-xlarge focused" id="prependedInput3" name="anggaran" type="text" value="{$pendaftar->anggaran}" disabled="disabled">
+								</div>
+							  </div>
+							  <div class="control-group">
+								<label class="control-label" for="focusedInput">Nama Pemegang Rekening</label>
+								<div class="controls">
+								  <input class="input-xlarge focused" id="prependedInput3" name="nama_rek" type="text" value="">
+								</div>
+							  </div>
+							  <div class="control-group">
+								<label class="control-label" for="focusedInput">Nomor Rekening</label>
+								<div class="controls">
+								  <input class="input-xlarge focused" id="prependedInput3" name="no_rek" type="text" value="">
+								</div>
+							  </div>
+							  <div class="control-group">
+								<label class="control-label" for="focusedInput">Bank</label>
+								<div class="controls">
+								  <input class="input-xlarge focused" id="prependedInput3" name="bank" type="text" value="">
+								</div>
+							  </div>
+							  <div class="form-actions">
+								<input type="hidden" name="idpendaftar" value="{$pendaftar->idpendaftar}"> 
+								<button type="submit" class="btn btn-primary">Download</button>
+								<button class="btn">Cancel</button>
+							  </div>
+							</fieldset>
+						  </form>
+					
+					</div>
+				</div><!--/span-->
+			
+			</div><!--/row-->
+
+			
+					<!-- content ends -->
+			</div><!--/#content.span10-->
+{literal}
+	<script>
+		$( "#date02" ).datepicker({ dateFormat: 'yy-mm-dd' });
+	</script>
+{/literal}

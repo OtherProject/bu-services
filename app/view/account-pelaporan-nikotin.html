@@ -1,0 +1,362 @@
+
+<script type="text/javascript">
+
+  {literal}
+
+    $(document).on('change', '#lokasipabrik', function(){
+
+
+      var id = $(this).val();
+
+      $.post(basedomain+'account/ajaxPabrik',{kode_wilayah:id}, function(data){
+
+        var html = "";
+
+        if (data.status==true){
+          
+          var hasil = data.res;
+          $('.noNPPBKC').val(hasil.pabrik.noNPPBKC);
+          $('.namaJalan').val(hasil.pabrik.namaJalan);
+          $('.noTelepon').val(hasil.ind.noTelepon);
+          $('.noFax').val(hasil.ind.noFax);
+          $('.namaPimpinan').val(hasil.ind.namaPimpinan);
+          $('.industriID').val(hasil.ind.id);
+          $('.pabrikID').val(hasil.pabrik.id);
+          
+          
+        }else{
+          $('.noNPPBKC').val('');
+          $('.namaJalan').val('');
+          $('.noTelepon').val('');
+          $('.noFax').val('');
+          $('.namaPimpinan').val('');
+          $('.industriID').val('');
+          $('.pabrikID').val('');
+        } 
+        
+      }, "JSON")  
+
+    })
+
+    $(document).on('change', '#lab', function(){
+
+
+      var id = $(this).val();
+
+      $.post(basedomain+'account/ajaxLab',{kode_wilayah:id}, function(data){
+
+        var html = "";
+
+        if (data.status==true){
+          
+          var hasil = data.res;
+          $('.alamat').val(hasil.alamat);
+          $('.penanggungjawab').val(hasil.penanggungjawab);
+          
+          
+          
+        }else{
+          $('.alamat').val('');
+          $('.penanggungjawab').val('');
+          
+        } 
+        
+      }, "JSON")  
+
+    })
+  {/literal}
+</script>
+<br>
+<section>
+    <div class="container"> 
+<form method="post" action="{$basedomain}account/pelaporan_nikotin" enctype="multipart/form-data">
+
+<div class="content-container">
+<div class="row">
+
+  
+  
+    
+      <h3>Form Pelaporan Nikotin dan Tar</h3>
+      <div class="col-md-12">
+        <div class="portlet">
+        
+          <div class="portlet-header">
+
+            <h3>
+              <i class="fa fa-file"></i>
+              List Pelaporan
+            </h3>
+
+          </div>
+          <div class="portlet-content">
+        
+            <div class="col-sm-12">
+              <div class="form-group">
+                {if $laporannikotin}
+                {foreach $laporannikotin as $val}
+              <a href="{$basedomain}account/pelaporan_nikotin/?id={$val.id}" class="form-control">{$val.merek}</a><br>
+                {/foreach}
+                {/if}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="clearfix"></div>
+    <br>
+
+      <div class="col-md-6">
+        
+        <div class="portlet">
+        
+          <div class="portlet-header">
+
+            <h3>
+              <i class="fa fa-file"></i>
+              Informasi Produsen
+            </h3>
+
+          </div> <!-- /.portlet-header -->
+        
+          <div class="portlet-content">
+        
+            <div class="col-sm-6">
+              <div class="form-group">
+              <label for="text-input">Nama Produsen / Importir</label>
+                  <select class="form-control" name="jenisKelamin">
+                    {if $listindustri}
+                    {foreach $listindustri as $val}
+                    <option value="{$val.id}">{$val.namaIndustri}</option>
+                    {/foreach}
+                    {/if}
+                  </select>
+              </div>
+            </div>  
+            <div class="col-sm-6">
+              <div class="form-group">
+              <label for="text-input">Lokasi Pabrik</label>
+                  <select class="form-control" name="jenisKelamin" id="lokasipabrik">
+                    <option value="" >-Pilih Pabrik-</option>
+                    {if $listpabrik}
+                    {foreach $listpabrik as $val}
+                    <option value="{$val.id}" >{$val.alamatPabrik.nama_wilayah}</option>
+                    {/foreach}
+                    {/if}
+                  </select>
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <div class="form-group">
+              <label for="text-input">No NPPBKC</label>
+                  <input type="text" name="noNPPBKC" class="form-control noNPPBKC" value="{$kemasanedit.noNPPBKC}" data-required="true" />
+              </div>
+            </div> 
+            <div class="col-sm-12">
+              <div class="form-group">
+              <label for="text-input">Alamat</label>
+                  <input type="text" name="namaJalan" class="form-control namaJalan" value="{$kemasanedit.namaJalan}" data-required="true" />
+              </div>
+            </div> 
+            
+            <div class="col-sm-12">
+              <div class="form-group">
+              <label for="text-input">Nama Pemilik</label>
+                  <input type="text" name="namaPimpinan" class="form-control namaPimpinan" value="{$kemasanedit.namaPimpinan}" data-required="true" />
+              </div>
+            </div> 
+          </div>
+        </div>
+      </div>
+      
+
+      <div class="col-md-6">
+        <div class="portlet">
+        
+          <div class="portlet-header">
+
+            <h3>
+              <i class="fa fa-file"></i>
+              Informasi Laboratorium Penguji
+            </h3>
+
+          </div> <!-- /.portlet-header -->
+        
+          <div class="portlet-content">
+        
+            <div class="col-sm-12">
+              <div class="form-group">
+              <label for="text-input">Nama Laboratorium</label>
+                  <select class="form-control" name="labID" id="lab">
+                    <option value="" >-Pilih Lab-</option>
+                    {if $lab}
+                    {foreach $lab as $val}
+                    <option value="{$val.id}" >{$val.nama}</option>
+                    {/foreach}
+                    {/if}
+                  </select>
+              </div>
+            </div>  
+            
+            <div class="col-md-12">
+              <div class="form-group">
+              <label for="text-input">Alamat</label>
+                  <input type="text" name="alamat" class="form-control alamat" value="" data-required="true" />
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <div class="form-group">
+              <label for="text-input">Penanggungjawab</label>
+                  <input type="text" name="penanggungjawab" class="form-control penanggungjawab" value="" data-required="true" />
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+<div class="clearfix"></div>
+<br>
+      <div class="col-md-6">
+        <div class="portlet">
+        
+          <div class="portlet-header">
+
+            <h3>
+              <i class="fa fa-file"></i>
+              Informasi Sampel
+            </h3>
+
+          </div> <!-- /.portlet-header -->
+        
+          <div class="portlet-content">
+        
+            <div class="col-sm-6">
+              <div class="form-group">
+              <label for="text-input">Merek Rokok</label>
+                   <select class="form-control" name="merek">
+                     {if $produk}
+                    {foreach $produk as $val}
+
+                    <option value="{$val.id}" >{$val.merek}</option>
+                    {/foreach}
+                    {/if}
+                  </select>
+              </div>
+            </div>  
+            
+            <div class="col-md-6">
+              <div class="form-group">
+              <label for="text-input">Jenis</label>
+                  <select class="form-control" name="jenis">
+                    <option value="1" >SKM</option>
+                    <option value="2" >SKK 2</option>
+                  </select>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+              <label for="text-input">Isi/Kemasan</label>
+                  <select class="form-control" name="isiKemasan">
+                    <option value="1" >12</option>
+                    
+                  </select>
+              </div>
+            </div>
+
+            
+            <div class="col-md-6">
+              <div class="form-group">
+              <label for="text-input">Kode Produksi</label>
+                  <input type="text" name="kodeProduksi" class="form-control" value="{$kemasanedit.kodeProduksi}" />
+              </div>
+            </div>
+            
+            <div class="col-md-12">
+              <div class="form-group">
+              <label for="text-input">Nomor/Kode Sampel</label>
+                  <input type="text" name="kodeSample" class="form-control" value="{$kemasanedit.kodeSample}" />
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6">
+        <div class="portlet">
+        
+          <div class="portlet-header">
+
+            <h3>
+              <i class="fa fa-file"></i>
+              Hasil Pengujian
+            </h3>
+
+          </div> <!-- /.portlet-header -->
+        
+          <div class="portlet-content">
+        
+           
+            <div class="col-md-6">
+              <div class="form-group">
+              <label for="text-input">Nomor Lap Hasil Uji/Sertifikat</label>
+                  <input type="text" name="noSertifikat" class="form-control" value="{$kemasanedit.noSertifikat}" />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+              <label for="text-input">Tanggal pengujian</label>
+                  <input type="text" name="tanggalUji" class="form-control" value="{$kemasanedit.tanggalUji}" />
+              </div>
+            </div>  
+            <div class="col-md-6">
+              <div class="form-group">
+              <label for="text-input">Kadar Nikotin</label>
+                  <input type="text" name="kadarNikotin" class="form-control" value="{$kemasanedit.kadarNikotin}" />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+              <label for="text-input">Kadar Tar Coresta/Tar ISO</label>
+                  <input type="text" name=" kadarTar" class="form-control" value="{$kemasanedit.kadarTar}" />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+              <label for="text-input">Kadar Tar SNI/ Tar Kretek</label>
+                  <input type="text" name="kadarKretek" class="form-control" value="{$kemasanedit.kadarKretek}" />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+              <label for="text-input">Upload sertifikat pengujian</label>
+                  <input type="file" name="sertifikat" class="form-control" value="{$kemasanedit.sertifikat}" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      </div>
+      
+</div>
+<br>
+<section>
+    <div class="container">  
+<input type="hidden" name="industriID" value="" class="industriID">
+<input type="hidden" name="pabrikID" value="" class="pabrikID">
+<button id="btn-dis" class="btn btn-info" type="submit">
+      <i class="fa fa-save"></i>
+      Simpan Data
+      </button>
+      <button id="btn-dis" class="btn btn-warning" type="submit">
+      <i class="fa fa-save"></i>
+      Reset
+      </button>
+</form>
+</div>
+</section>

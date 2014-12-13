@@ -1,0 +1,185 @@
+
+<script type="text/javascript">
+
+  {literal}
+
+  	$(function () {
+		$('#postdate1').datepicker ();
+		$('#expiredate1').datepicker ();
+		
+		$("#isi").jqte();
+		
+
+	})
+
+    $(document).on('change', '.pilihmerek', function(){
+
+
+      var id = $(this).val();
+
+      $.post(basedomain+'evaluasi/ajax',{merek:id}, function(data){
+
+        var html = "";
+
+        if (data.status==true){
+
+
+        	$('.namaprodusen').val(data.res[0].produsen);
+        	$('.jenisrokok').val(data.res[0].jenis);
+        	$('.alamatprodusen').val(data.res[0].alamat);
+        	
+          
+        } 
+        
+      }, "JSON")  
+
+    })
+  {/literal}
+</script>
+
+
+<div id="content-header">
+	<h1>Detail Evaluasi</h1>
+</div> <!-- #content-header -->	
+
+<div id="content-container">
+
+	{if $status}
+		<div class="alert alert-success" role="alert">Data berhasil disimpan</div>
+	{/if}
+	<form id="validate-enhanced" class="form parsley-form" method="post" action="" enctype="multipart/form-data">
+		
+		{if !$addnew}
+		<button type="submit" class="btn btn-info" id="btn-dis"><i class="fa fa-save"></i> Update Data</button>
+
+		<a href="{$basedomain}evaluasi/detail/?id={$id}&act=2" ><button type="button" class="btn btn-success" id="btn-dis"><i class="fa fa-check"></i> Approved</button></a>
+		
+		<a href="{$basedomain}evaluasi/detail/?id={$id}&act=3" ><button type="button" class="btn btn-danger" id="btn-dis"><i class="fa fa-multiply"></i> Rejected</button></a>
+
+		<a href="{$basedomain}evaluasi/detail/?id={$id}" ><button type="button" class="btn btn-warning" id="btn-dis"><i class="fa fa-refresh"></i> Reload</button></a>
+		<input type="hidden" name="id" value="{$data.id}">
+		{else}
+		<button type="submit" class="btn btn-info" id="btn-dis"><i class="fa fa-save"></i> Simpan Data</button>
+
+		{/if}
+		<div class="row">
+			<div class="col-md-6">
+				<div class="portlet">
+				
+					<div class="portlet-header">
+
+						<h3>
+							<i class="fa fa-file"></i>
+							Form Produk
+						</h3>
+
+					</div> <!-- /.portlet-header -->
+				
+					<div class="portlet-content">
+				
+						<div class="col-sm-12">
+							<div class="form-group">
+							<label for="text-input">Nama Merek Rokok</label>
+								<select class="form-control pilihmerek">
+									<option>-Pilih Merek-</option>
+									{foreach $getMerek as $val}
+									<option value="{$val.id}">{$val.merek}</option>
+									{/foreach}
+								</select>
+								{*}
+									<input type="text" name="merek" class="form-control" value="{$data.merek}" data-required="true" {if !$addnew}disabled{/if}/>{/*}
+							</div>
+						</div>	
+						
+						<div class="col-md-12">
+							<div class="form-group">
+							<label for="text-input">Nama Pabrik</label>
+								
+									<input type="text" name="produsen" class="form-control namaprodusen" value="{$data.produsen}" disabled/>
+							</div>
+						</div>
+
+						<div class="col-md-6">
+							<div class="form-group">
+							<label for="text-input">Isi</label>
+									<input type="text" name="jenis" class="form-control jenisrokok" value="{$data.jenis}" />
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="form-group">
+							<label for="text-input">Jenis</label>
+									<input type="text" name="jenis" class="form-control jenisrokok" value="{$data.jenis}" />
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="form-group">
+							<label for="text-input">Tahun Cukai</label>
+									<input type="text" name="jenis" class="form-control jenisrokok" value="{$data.jenis}" />
+							</div>
+						</div>
+						<div class="col-md-7">
+							<div class="form-group">
+							<label for="text-input">Tanggal Monitoring</label>
+								<div id="tanggalBeli" class="input-group date" data-auto-close="true" data-date-format="dd-mm-yyyy" data-date-autoclose="true">
+									<input class="form-control" type="text" name="tanggalBeli" value="{$data.tanggalBeli}" data-required="true">
+									<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+								</div>
+							</div>
+						</div>
+
+						
+						<div class="col-sm-12">
+							<div class="form-group">
+							<label for="textarea-input">Tempat Monitoring</label>
+									<textarea name="lokasiBeli" id="isi"  cols="10" rows="20" class="form-control">{$data.lokasiBeli}</textarea>
+							</div>
+							
+							
+						</div>
+						
+					</div>
+				</div>
+				
+			</div>
+		
+		
+			<div class="col-md-6">
+				<div class="portlet">
+					<div class="portlet-header">
+
+						<h3>
+							<i class="fa fa-file"></i>
+							Peringatan Kesehatan
+						</h3>
+
+					</div> <!-- /.portlet-header -->
+					<div class="portlet-content">
+						<div class="col-md-6">
+							<div class="form-group">
+							<label for="text-input">Tulisan (PP 19/2003)</label>
+									<input type="text" name="jenisGambar" class="form-control" value="{$data.jenisGambar}" />
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+							<label for="text-input">Gambar dan Tulisan (PP 109/2012)</label>
+									<input type="text" name="tulisanGambar" class="form-control" value="{$data.tulisanGambar}" />
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+							<label for="text-input">Keterangan</label>
+									<input type="text" name="luasPeringatan_depan" class="form-control" value="{$data.luasPeringatan_depan}" />
+							</div>
+						</div>
+						
+						
+					</div>
+				</div>
+				
+				
+			</div>
+		</div>
+	
+	</form>
+</div>

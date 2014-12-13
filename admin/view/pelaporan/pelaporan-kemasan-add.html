@@ -1,0 +1,433 @@
+<link href="{$basedomain}css/main.css" rel="stylesheet">
+<script type="text/javascript">
+
+  {literal}
+
+  	$(function () {
+		$('#postdate1').datepicker ();
+		$('#expiredate1').datepicker ();
+		
+		$("#isi").jqte();
+		
+
+	})
+
+    $(document).on('change', '.pilihmerek', function(){
+
+
+      var id = $(this).val();
+
+      $.post(basedomain+'evaluasi/ajax',{merek:id}, function(data){
+
+        var html = "";
+
+        if (data.status==true){
+
+
+        	$('.namaprodusen').val(data.res[0].produsen);
+        	$('.jenisrokok').val(data.res[0].jenis);
+        	$('.alamatprodusen').val(data.res[0].alamat);
+        	
+          
+        } 
+        
+      }, "JSON")  
+
+    })
+
+    // $(document).on('change', '#changeInd', function(){
+
+    // 	var id = $(this).val();
+
+    // 	$.post(basedomain+'pelaporan/ajaxIndustri',{get_pabrik:true, id:id}, function(data){
+
+    // 		if (data.status==true){
+    // 			$.each(data.res, function(i,e){
+
+    //     			$html += "<option value='"+e.id+"'>"+e.kecamatan+"</option>";
+    //     		})
+
+    // 			$('#lokasipabrik').html(html);
+    // 		}
+    		
+    // 	}, "JSON") 	
+    	
+    // })	
+
+    $(document).on('change', '#lokasipabrik', function(){
+
+
+      var id = $(this).val();
+
+      $.post(basedomain+'pelaporan/ajaxIndustri',{get_pabrik:true, kode_wilayah:id}, function(data){
+
+        var html = "";
+
+        if (data.status==true){
+          
+          var hasil = data.res;
+          $('.noNPPBKC').val(hasil.pabrik.noNPPBKC);
+          $('.namaJalan').val(hasil.pabrik.namaJalan);
+          $('.noTelepon').val(hasil.ind.noTelepon);
+          $('.noFax').val(hasil.ind.noFax);
+          $('.namaPimpinan').val(hasil.ind.namaPimpinan);
+          $('.industriID').val(hasil.ind.id);
+          $('.pabrikID').val(hasil.pabrik.id);
+          
+        }else{
+          $('.noNPPBKC').val('');
+          $('.namaJalan').val('');
+          $('.noTelepon').val('');
+          $('.noFax').val('');
+          $('.namaPimpinan').val('');
+          $('.industriID').val('');
+          $('.pabrikID').val('');
+        } 
+        
+      }, "JSON")  
+
+    })
+
+    $(document).on('change', '#changeInd', function(){
+
+    	var id = $(this).val();
+
+      	$.post(basedomain+'pelaporan/ajaxGetLokasiPabrik',{idIndustri:id}, function(data){
+      		var html = "";
+      		
+        	if (data.status==true){
+        		html += "<option value='0'>- Pilih Pabrik -</option>";
+        		$.each(data.res, function(i,e){
+        			
+        			html += "<option value='"+e.id+"'>"+e.alamatPabrik.nama_wilayah+"</option>";
+        		})
+
+        		$('#lokasipabrik').html(html);
+        	}else{
+        		console.log('galga');
+        	}
+  		}, "JSON")  
+    })	
+    
+  {/literal}
+</script>
+
+
+<div id="content-header">
+	<h1>Detail Evaluasi</h1>
+</div> <!-- #content-header -->	
+
+
+<div id="content-container">
+
+	{if $status}
+		<div class="alert alert-success" role="alert">Data berhasil disimpan</div>
+	{/if}
+	<form id="validate-enhanced" class="" method="post" action="" enctype="multipart/form-data">
+		
+		
+		<button type="submit" class="btn btn-info" id="btn-dis"><i class="fa fa-save"></i> Evaluasi</button>
+		{*}
+		<a href="{$basedomain}pelaporan/detailkemasan/?id={$id}&act=1" ><button type="button" class="btn btn-danger" id="btn-dis"><i class="fa fa-multiply"></i> Rejected</button></a>{/*}
+
+		<input type="hidden" name="idPelaporan" value="{$id}">
+		<input type="hidden" name="addLaporan" value="1">
+
+		<div class="portlet">
+			<div class="portlet-header">
+
+				<h3>
+					<i class="fa fa-file"></i>
+					Gambar Kemasan
+				</h3>
+
+			</div> <!-- /.portlet-header -->
+			<div class="portlet-content">
+				<div class="col-md-12">
+				{$slider}
+				</div>
+			
+			<div class="col-md-6">
+              <div class="form-group">
+              <label for="text-input">Foto Kemasan Depan</label>
+              {if $laporankemasandetail.fotoDepan}
+              <img src="{$basedomain}public_assets/{$laporankemasandetail.fotoDepan}" width="100px">{/if}
+                  <input type="file" name="fotoDepan" class="form-control" value="" />
+
+              </div>
+            </div>
+            
+            <div class="col-md-6">
+              <div class="form-group">
+              <label for="text-input">Foto Kemasan Belakang</label>
+              {if $laporankemasandetail.fotoBelakang}
+              <img src="{$basedomain}public_assets/{$laporankemasandetail.fotoBelakang}" width="100px">{/if}
+                  <input type="file" name="fotoBelakang" class="form-control" value="" />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+              <label for="text-input">Foto Kemasan samping Kanan</label>
+              {if $laporankemasandetail.fotoKanan}
+              <img src="{$basedomain}public_assets/{$laporankemasandetail.fotoKanan}" width="100px">{/if}
+                  <input type="file" name="fotoKanan" class="form-control" value="" />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+              <label for="text-input">Foto Kemasan samping kiri</label>
+              {if $laporankemasandetail.fotoKiri}
+              <img src="{$basedomain}public_assets/{$laporankemasandetail.fotoKiri}" width="100px">{/if}
+                  <input type="file" name="fotoKiri" class="form-control" value="" />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+              <label for="text-input">Foto Kemasan atas</label>
+              {if $laporankemasandetail.fotoAtas}
+              <img src="{$basedomain}public_assets/{$laporankemasandetail.fotoAtas}" width="100px">{/if}
+                  <input type="file" name="fotoAtas" class="form-control" value="" />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+              <label for="text-input">Foto Kemasan bawah</label>
+              {if $laporankemasandetail.fotoBawah}
+              <img src="{$basedomain}public_assets/{$laporankemasandetail.fotoBawah}" width="100px">{/if}
+                  <input type="file" name="fotoBawah" class="form-control" value="" />
+              </div>
+            </div>
+			</div>
+		</div>
+
+		
+		<div class="row" style="margin-top:10px;">
+			<div class="col-md-12">
+				<div class="span6" style="border:1px solid #bbb;border-radius:10px;padding:10px 20px 10px 20px;">
+
+
+					<table class="table">
+						
+						<thead>
+						<tr>
+							
+							<th align="center">Item</th>
+							<th align="center">Hasil</th>
+							
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							
+							<td>Nama Produsen / Importir</td>
+							<td>
+								<select name="industriID" class="form-control" id="changeInd">
+									{foreach $listindustri as $val}
+									<option value="{$val.id}">{$val.namaIndustri}</option>
+									{/foreach}
+								</select>
+								</td>
+							
+						</tr>
+						<tr>
+							
+							<td>Alamat Pabrik</td>
+							<td>
+								<select name="pabrikID" id="lokasipabrik" class="form-control">
+									<option value="" >-Pilih Pabrik-</option>
+					                    
+								</select>
+								</td>
+							
+						</tr>
+						<tr>
+							
+							<td>No NPPBKC </td>
+							<td><input type="text" name="noNPPBKC" class="form-control noNPPBKC" value="{$data.noNPPBKC}" /></td>
+							
+						</tr>
+						<tr>
+							
+							<td>Alamat</td>
+							<td><input type="text" name="namaJalan" class="form-control namaJalan" value="{$data.namaJalan}" /></td>
+							
+						</tr>
+						<tr>
+							
+							<td>No Telp</td>
+							<td><input type="text" name="noTelepon" class="form-control noTelepon" value="{$data.noTelepon}" /></td>
+							
+						</tr>
+						<tr>
+							
+							<td>No Fax</td>
+							<td><input type="text" name="noFax" class="form-control noFax" value="{$data.noFax}" /></td>
+							
+						</tr>
+						<tr>
+							
+							<td>Nama Pemilik / Direktur </td>
+							<td><input type="text" name="namaPimpinan" class="form-control namaPimpinan" value="{$data.namaPimpinan}" /></td>
+							
+						</tr>
+						<tr>
+							
+							<td>Nama Merek Rokok</td>
+							<td><select class="form-control" name="merek">
+			                    {if $produk}
+			                    {foreach $produk as $val}
+
+			                    <option value="{$val.id}" >{$val.merek}</option>
+			                    {/foreach}
+			                    {/if}
+			                  </select>
+			              	</td>
+							
+						</tr>
+						<tr>
+							
+							<td>Jenis Rokok</td>
+							<td>
+								<select name="jenis" class="form-control">
+									<option {if $data.jenis==1}selected{/if} value="1">SKT</option>
+									<option {if $data.jenis==2}selected{/if} value="2">SKM</option>
+									<option {if $data.jenis==3}selected{/if}value="3" >SPM</option>
+                    				<option {if $data.jenis==4}selected{/if}value="4" >CRT</option>
+                					<option {if $data.jenis==5}selected{/if}value="5" >TIS</option>
+								</select>
+							</td>
+							
+						</tr>
+						<tr>
+							
+							<td>Isi Kemasan</td>
+							<td>
+								<select name="isi" class="form-control">
+									<option {if $data.isi==1}selected{/if} value="1">10 bks/slop</option>
+									<option {if $data.isi==2}selected{/if} value="2">10 btg/bks</option>
+									<option {if $data.isi==3}selected{/if} value="3">10 slider/slop</option>
+									<option {if $data.isi==4}selected{/if} value="4">12 btg/bks</option>
+									<option {if $data.isi==5}selected{/if} value="5">50 btg/slinder</option>
+								</select>
+								{*}
+								<input type="text" name="jenis" class="form-control jenisrokok" value="{$data.d_isiKemasan}" />{/*}</td>
+							
+						</tr>
+						<tr>
+							
+							<td>Bentuk Kemasan</td>
+							<td>
+								<select name="bentuKemasan" class="form-control">
+									<option {if $data.isi==1}selected{/if} value="1">Kotak persegi panjang</option>
+									<option {if $data.isi==2}selected{/if} value="2">Kotak slop</option>
+									<option {if $data.isi==3}selected{/if} value="3">Slinder</option>
+								</select>
+								{*}
+								<input type="text" name="jenis" class="form-control jenisrokok" value="{$data.d_bentukKemasan}" />{/*}</td>
+							
+						</tr>
+						<tr>
+							
+							<td>Jenis Gambar</td>
+							<td>
+								<select class="form-control" name="jenisGambar">
+				                  <option value="1" {if $data.jenisGambar==1}selected{/if}>1 (Kanker Mulut)</option>
+				                  <option value="2" {if $data.jenisGambar==2}selected{/if}>2 (Kanker Tenggorokan)</option>
+				                  <option value="3" {if $data.jenisGambar==3}selected{/if}>3 (Ayah dan anak)</option>
+				                  <option value="4" {if $data.jenisGambar==4}selected{/if}>4</option>
+				                  <option value="5" {if $data.jenisGambar==5}selected{/if}>5</option>
+				                  <option value="6" {if $data.jenisGambar==6}selected{/if}>6</option>
+				                  </select>
+								</td>
+							
+						</tr>
+						<tr>
+							
+							<td>Tulisan Peringatan Kesehatan</td>
+							<td><select class="form-control" name="tulisanPeringatan">
+			                      {foreach $tulisan as $val}
+			                      <option value="{$val.id}" {if $data.tulisanPeringatan=={$val.id}}selected{/if}>{$val.title}</option>
+			                      {/foreach}
+			                       
+			                  </select></td>
+							
+						</tr>
+						<tr>
+							
+							<td>Kadar Nikotin</td>
+							<td><input type="text" name="kodeProduksi" class="form-control kodeProduksi" value="{$data.kodeProduksi}" /></td>
+							
+						</tr>
+						<tr>
+							
+							<td>Kadar Tar</td>
+							<td><input type="text" name="kodeProduksi" class="form-control kodeProduksi" value="{$data.kodeProduksi}" /></td>
+							
+						</tr>
+						<tr>
+							
+							<td>Kode Produksi</td>
+							<td><input type="text" name="kodeProduksi" class="form-control kodeProduksi" value="{$data.kodeProduksi}" /></td>
+							
+						</tr>
+						<tr>
+							
+							<td>Tanggal dan Tahun Produksi</td>
+							<td><input type="text" name="tglProduksi" class="form-control tglProduksi" value="{$data.tglProduksi}" /></td>
+							
+						</tr>
+						<tr>
+							
+							<td>Lokasi Pembelian</td>
+							<td><input type="text" name="lokasiBeli" class="form-control lokasiBeli" value="{$data.lokasiBeli}" /></td>
+							
+						</tr>
+						<tr>
+							
+							<td>Tanggal Pembelian</td>
+							<td><input type="text" name="tglBeli" class="form-control tglBeli" value="{$data.tglBeli}" /></td>
+							
+						</tr>
+						<tr>
+							
+							<td>Tahun Cukai</td>
+							<td><input type="text" name="tahunCukai" class="form-control tahunCukai" value="{$data.tahunCukai}" /></td>
+							
+						</tr>
+						<tr>
+							
+							<td>Harga / Bungkus</td>
+							<td><input type="text" name="hargaBungkus" class="form-control hargaBungkus" value="{$data.hargaBungkus}" /></td>
+							
+						</tr>
+						<tr>
+							<td>Harga / Batang</td>
+							<td><input type="text" name="hargaBatang" class="form-control hargaBatang" value="{$data.hargaBatang}" /></td>
+						</tr>
+						
+						<tr>
+							
+							<td>Kesimpulan</td>
+							<td><select class="form-control" name="kesimpulan">
+								<option value="0">-Tentukan kesimpulan-</option>
+                                <option value="0" {if $data.kesimpulan==0}selected{/if}>TMK</option>
+                                <option value="1" {if $data.kesimpulan==1}selected{/if}>MK</option>
+                                
+                                </select></td>
+							<td>&nbsp;</td>
+						</tr>
+						
+						
+						</tbody>
+					</table>
+					
+				</div>
+			</div>
+		</div>
+
+		
+	</form>
+	
+</div>
+<link rel="stylesheet" href="{$basedomain}css/vertical.news.slider.css?v=1.0">
+<script src="{$basedomain}js/vertical.news.slider.js"></script>

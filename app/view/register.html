@@ -1,0 +1,104 @@
+<br>
+<section>
+    <div class="container">                
+        <h2 align="center">Register Akun</h2>
+        <p class="lead">&nbsp;</p>
+        <form method="post" action="{$basedomain}register/save">
+
+<div class="content-container">
+<div class="row">
+
+  <div class="col-md-12">
+    <div class="col-md-2"></div>
+   <div class="col-md-8">
+        <div class="portlet">
+        
+          <div class="portlet-header">
+
+          </div> <!-- /.portlet-header -->
+        
+          <div class="portlet-content">
+        
+            <div class="col-sm-6">
+              <div class="form-group">
+              <label for="text-input">Nama Depan</label>
+                  <input type="text" name="namaDepan" class="form-control" value="{$data.merek}" data-required="true" />
+              </div>
+            </div>  
+            <div class="col-sm-6">
+              <div class="form-group">
+              <label for="text-input">Nama Belakang</label>
+                  <input type="text" name="namaBelakang" class="form-control" value="{$data.merek}" data-required="true" />
+              </div>
+            </div>  
+            <div class="col-md-12">
+              <div class="form-group">
+              <label for="text-input">Instansi</label>
+                  <input type="text" name="instansi" class="form-control" value="{$data.produsen}" />
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <div class="form-group">
+              <label for="text-input">Alamat</label>
+                  <input type="text" name="alamat" class="form-control" value="{$data.jenis}" />
+              </div>
+            </div>
+
+            
+            <div class="col-md-12">
+              <div class="form-group">
+              <label for="text-input">No Telepon</label>
+                  <input type="text" name="noTelepon" class="form-control" value="{$data.kataPromotif}" />
+              </div>
+            </div>
+            
+            <div class="col-md-12">
+              <div class="form-group">
+              <label for="text-input">Alamat Email</label>
+                  <input type="text" name="email" class="form-control" value="{$data.evaluasiInformasi}" />
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group">
+              <label for="text-input">Nama Aplikasi</label>
+                  <input type="text" name="appName" class="form-control" value="{$data.evaluasiInformasi}" />
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <div class="form-group">
+             {$captcha}
+              <br>
+              <button id="btn-dis" class="btn btn-info" type="submit">
+              <i class="fa fa-save"></i>
+              Simpan Data
+              </button>
+              <button id="btn-dis" class="btn btn-warning" type="submit">
+              <i class="fa fa-save"></i>
+              Reset
+              </button>
+              </div>
+            </div>
+            
+          </div>
+
+
+        </div>
+      </div>
+
+      
+      
+      </div>
+    <div class="col-md-2"></div>
+  </div>
+
+  
+      
+</div>
+
+</form>
+    </div>
+    
+</section> 
+

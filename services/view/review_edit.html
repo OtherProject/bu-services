@@ -1,0 +1,860 @@
+			<div id="content" class="span10">
+			<!-- content starts -->
+			
+
+			<div>
+				<ul class="breadcrumb">
+					<li>
+						<a href="#">Home</a> <span class="divider">/</span>
+					</li>
+					<li>
+						<a href="#">Form</a>
+					</li>
+				</ul>
+			</div>
+			
+			<form method="post" action="{$basedomain}review/edit" enctype="multipart/form-data">
+			<div class="row-fluid sortable">
+				<div class="box span12">
+					<div class="box-header well" data-original-title>
+						<h2><i class="icon-edit"></i> Data Administrasi P3SWOT</h2>
+						<div class="box-icon">
+							<a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a>
+							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
+							<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+						</div>
+					</div>
+					<div class="box-content">
+						<div class="form-horizontal">
+							<fieldset>
+								<legend>Data Pribadi</legend>
+								{*}
+							  	<div class="control-group">
+									<label class="control-label" for="disabledInput">ID</label>
+									<div class="controls">
+									  <input class="input-xlarge disabled" id="disabledInput" type="text" name="id"  disabled="" value="{$peserta.id}">
+									</div>
+								</div>{/*}
+                              	<div class="control-group">
+									<label class="control-label" for="disabledInput">Nama</label>
+									<div class="controls">
+									  <input class="input-xlarge disabled" id="disabledInput1" type="text" name="nama"  disabled="" value="{$peserta.nama}">
+									</div>
+							  	</div>
+                              	<div class="control-group">
+									<label class="control-label" for="disabledInput">Alamat</label>
+									<div class="controls">
+									  <input class="input-xlarge disabled" id="disabledInput2" type="text" name="kategori" disabled="" value="{$peserta.alamat}">
+									</div>
+							  	</div>
+                              	<div class="control-group">
+									<label class="control-label" for="disabledInput">Kota</label>
+									<div class="controls">
+									  <input class="input-xlarge disabled" id="disabledInput3" type="text" name="institusi"  disabled="" value="{$peserta.kota}">
+									</div>
+								</div>
+                              	<div class="control-group">
+									<label class="control-label" for="focusedInput">Kode Pos</label>
+									<div class="controls">
+									  <input class="input-xlarge focused" id="prependedInput1" name="kode_pos" type="text" value="{$peserta.kode_pos}" disabled="disabled">
+									</div>
+								</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Agama</label>
+									<div class="controls">
+									  <input class="input-xlarge focused" id="prependedInput1" name="agama" type="text" value="{$peserta.agama}" disabled="disabled">
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Gender</label>
+									<div class="controls">
+									  <input class="input-xlarge focused" id="prependedInput1" name="gender" type="text" value="{$peserta.gender}" disabled="disabled">
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Status Keluarga</label>
+									<div class="controls">
+									  <input class="input-xlarge focused" id="prependedInput1" name="status_keluarga" type="text" value="{$peserta.status_keluarga}" disabled="disabled">
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Nama Orang Tua</label>
+									<div class="controls">
+									  <input class="input-xlarge focused" id="prependedInput1" name="nama_ortu" type="text" value="{$peserta.nama_ortu}" disabled="disabled">
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Email</label>
+									<div class="controls">
+									  <input class="input-xlarge focused" id="prependedInput1" name="email" type="text" value="{$peserta.email}" disabled="disabled">
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Pekerjaan</label>
+									<div class="controls">
+									  <input class="input-xlarge focused" id="prependedInput1" name="pekerjaan" type="text" value="{$peserta.pekerjaan}" disabled="disabled">
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Pendidikan</label>
+									<div class="controls">
+									  <input class="input-xlarge focused" id="prependedInput1" name="pendidikan" type="text" value="{$peserta.pendidikan}" disabled="disabled">
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Semester Saat Ini</label>
+									<div class="controls">
+									  <input class="input-xlarge focused" id="prependedInput1" name="semester_berjalan" type="text" value="{$peserta.semester_berjalan}" disabled="disabled">
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Jurusan</label>
+									<div class="controls">
+									  <input class="input-xlarge focused" id="prependedInput1" name="jurusan" type="text" value="{$peserta.jurusan}" disabled="disabled">
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Nama Perusahaan</label>
+									<div class="controls">
+									  <input class="input-xlarge focused" id="prependedInput1" name="nama_perusahaan" type="text" value="{$peserta.nama_perusahaan}" disabled="disabled">
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Nama Kepala Perusahaan</label>
+									<div class="controls">
+									  <input class="input-xlarge focused" id="prependedInput1" name="kepala_perusahaan" type="text" value="{$peserta.kepala_perusahaan}" disabled="disabled">
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Jabatan</label>
+									<div class="controls">
+									  <textarea disabled="disabled" class="input-xlarge focused">{$peserta.jabatan}
+									  </textarea>
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Alamat Perusahaan</label>
+									<div class="controls">
+									  	<textarea disabled="disabled" class="input-xlarge focused">{$peserta.alamat_perusahaan}
+									  	</textarea>
+
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Kota Perusahaan</label>
+									<div class="controls">
+									  <input class="input-xlarge focused" id="prependedInput1" name="kota_perusahaan" type="text" value="{$peserta.kota_perusahaan}" disabled="disabled">
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Fax Perusahaan</label>
+									<div class="controls">
+									  <input class="input-xlarge focused" id="prependedInput1" name="fax_perusahaan" type="text" value="{$peserta.fax_perusahaan}" disabled="disabled">
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">No telepon</label>
+									<div class="controls">
+									  <input class="input-xlarge focused" id="prependedInput1" name="no_tlp" type="text" value="{$peserta.no_tlp}" disabled="disabled">
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Usia</label>
+									<div class="controls">
+									  <input class="input-xlarge focused" id="prependedInput1" name="usia" type="text" value="{$peserta.usia}" disabled="disabled">
+									</div>
+							  	</div>
+
+							  	<fieldset>
+							  		<legend>Data Nilai Kompetensi</legend>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Jalur</label>
+									<div class="controls">
+									  	<select class="jalur" name="jalur">
+									  		<option value="1" {if $peserta.jalur==1}selected{/if}>Jalur UN</option>
+									  		<option value="2" {if $peserta.jalur==2}selected{/if}>Jalur IPK</option>
+									  	</select>
+									</div>
+							  	</div>
+							  	{*}
+							  	{if $peserta.jalur==1}
+							  	<div class="control-group un">
+									<label class="control-label" for="focusedInput">Jalur UN</label>
+									<div class="controls">
+									  	<span></span>
+									  	<input type="radio" value="1" name="jalur_un" class="span1 typeahead"/>9.5 - 10
+									  	<input type="radio" value="2" name="jalur_un" class="span1 typeahead"/>9.1 - 9.5
+									  	<input type="radio" value="2" name="jalur_un" class="span1 typeahead"/>8.6 - 9.0
+									  	<input type="radio" value="2" name="jalur_un" class="span1 typeahead"/>7.6 - 8.5
+									  	<input type="radio" value="2" name="jalur_un" class="span1 typeahead"/>6.6 - 7.5
+									  	<input type="radio" value="2" name="jalur_un" class="span1 typeahead"/>MA/SMK
+									</div>
+								</div>
+								{/if}
+								{if $peserta.jalur==2}
+								<div class="control-group ipk">
+									<label class="control-label" for="focusedInput">Jalur IPK</label>
+									<div class="controls">
+									  	<span></span>
+									  	<input type="radio" value="1" name="jalur_ipk" class="span1 typeahead"/>3.75 - 4.00
+									  	<input type="radio" value="2" name="jalur_ipk" class="span1 typeahead"/>3.51 - 3.75
+									  	<input type="radio" value="2" name="jalur_ipk" class="span1 typeahead"/>3.26 - 3.50
+									  	<input type="radio" value="2" name="jalur_ipk" class="span1 typeahead"/>3.01 - 3.25
+									  	<input type="radio" value="2" name="jalur_ipk" class="span1 typeahead"/>2.6 - 3.00
+
+									</div>
+								</div>
+								{/if}{/*}
+								<div class="control-group">
+									<label class="control-label" for="focusedInput">Score</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused jalur_score" id="prependedInput1" name="jalur_score" type="text" value="{$peserta.jalur_score}">
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Total Score</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused jalur_total_score" id="prependedInput1" name="jalur_total" type="text" value="{$peserta.jalur_total}" onclick='setNilai("jalur")'>
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Bobot</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused jalur_bobot" id="prependedInput1" name="jalur_bobot" type="text" value="{$peserta.jalur_bobot}" onclick='setNilai("jalur")'>
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Nilai Akhir</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused jalur_nilai_akhir" id="prependedInput1" name="jalur_nilai_akhir" type="text" value="{$peserta.jalur_nilai_akhir}" readonly="readonly">
+									</div>
+							  	</div>
+
+							  	
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Toefl</label>
+									<div class="controls">
+									  	<select class="toefl" name="toefl">
+									  		<option value="1" {if $peserta.toefl==1}selected{/if}>Toefl Paper</option>
+									  		<option value="2" {if $peserta.toefl==2}selected{/if}>Toefl IBT</option>
+									  	</select>
+									</div>
+							  	</div>
+							  	{*}
+							  	<div class="control-group toefl_paper">
+									<label class="control-label" for="focusedInput">Toefl Paper</label>
+									<div class="controls">
+									  	<span></span>
+									  	<input type="radio" value="2" name="toefl_paper" class="span1 typeahead"/>590 - 677
+									  	<input type="radio" value="2" name="toefl_paper" class="span1 typeahead"/>550 - 587
+									  	<input type="radio" value="2" name="toefl_paper" class="span1 typeahead"/>513 - 547
+									  	<input type="radio" value="2" name="toefl_paper" class="span1 typeahead"/>477 - 510
+									  	<input type="radio" value="2" name="toefl_paper" class="span1 typeahead"/>437 - 473
+									</div>
+								</div>
+								<div class="control-group toefl_ibt">
+									<label class="control-label" for="focusedInput">Toefl IBT</label>
+									<div class="controls">
+									  	<span></span>
+									  	<input type="radio" value="2" name="toefl_ibt" class="span1 typeahead"/>96 - 120
+									  	<input type="radio" value="2" name="toefl_ibt" class="span1 typeahead"/>79 - 95
+									  	<input type="radio" value="2" name="toefl_ibt" class="span1 typeahead"/>65 - 78
+									  	<input type="radio" value="2" name="toefl_ibt" class="span1 typeahead"/>53 - 64
+									  	<input type="radio" value="2" name="toefl_ibt" class="span1 typeahead"/>41 - 52
+									</div>
+								</div>{/*}
+								<div class="control-group">
+									<label class="control-label" for="focusedInput">Score</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused toefl_score" id="prependedInput1" name="toefl_score" type="text" value="{$peserta.toefl_score}">
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Total Score</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused toefl_total_score" id="prependedInput1" name="toefl_total" type="text" value="{$peserta.toefl_total}" onclick='setNilai("toefl")'>
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Bobot</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused toefl_bobot" id="prependedInput1" name="toefl_bobot" type="text" value="{$peserta.toefl_bobot}" onclick='setNilai("toefl")'>
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Nilai Akhir</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused toefl_nilai_akhir" id="prependedInput1" name="toefl_nilai_akhir" type="text" value="{$peserta.toefl_nilai_akhir}" readonly="readonly">
+									</div>
+							  	</div>
+
+
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Toeic</label>
+									<div class="controls">
+									  	<select class="toeic" name="toeic">
+									  		<option value="1" {if $peserta.toeic==1}selected{/if}>TOEIC</option>
+									  		<option value="2" {if $peserta.toeic==2}selected{/if}>IELTS</option>
+									  	</select>
+									</div>
+							  	</div>
+							  	{*}
+							  	<div class="control-group toeic_toeic">
+									<label class="control-label" for="focusedInput">TOEIC</label>
+									<div class="controls">
+									  	<span></span>
+									  	<input type="radio" value="2" name="toeic_toeic" class="span1 typeahead"/>785 - 990
+									  	<input type="radio" value="2" name="toeic_toeic" class="span1 typeahead"/>605 - 780
+									  	<input type="radio" value="2" name="toeic_toeic" class="span1 typeahead"/>405 - 600
+									</div>
+								</div>
+								<div class="control-group toeic_ielts">
+									<label class="control-label" for="focusedInput">IELTS</label>
+									<div class="controls">
+									  	<span></span>
+									  	<input type="radio" value="2" name="toeic_ielts" class="span1 typeahead"/>7.5 - 9.0
+									  	<input type="radio" value="2" name="toeic_ielts" class="span1 typeahead"/>6.5 - 7.0
+									  	<input type="radio" value="2" name="toeic_ielts" class="span1 typeahead"/>5.5 - 6.0
+									  	<input type="radio" value="2" name="toeic_ielts" class="span1 typeahead"/>4.5 - 5.0
+									  	<input type="radio" value="2" name="toeic_ielts" class="span1 typeahead"/>4.0
+									</div>
+								</div>{/*}
+								<div class="control-group">
+									<label class="control-label" for="focusedInput">Score</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused toeic_score" id="prependedInput1" name="toeic_score" type="text" value="{$peserta.toeic_score}">
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Total Score</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused toeic_total_score" id="prependedInput1" name="toeic_total" type="text" value="{$peserta.toeic_total}" onclick='setNilai("toeic")'>
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Bobot</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused toeic_bobot" id="prependedInput1" name="toeic_bobot" type="text" value="{$peserta.toeic_bobot}" onclick='setNilai("toeic")'>
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Nilai Akhir</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused toeic_nilai_akhir" id="prependedInput1" name="toeic_nilai_akhir" type="text" value="{$peserta.toeic_nilai_akhir}" readonly="readonly">
+									</div>
+							  	</div>
+							  	</fieldset>
+								
+							  
+							</fieldset>
+
+							<fieldset>
+							  		<legend>Data Pendukung Akademik</legend>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Akreditasi Program Studi</label>
+									<div class="controls">
+									  	<select class="akreditasi" name="akreditasi">
+									  		<option value="A" {if $peserta.akreditasi=='A'}selected{/if}>A</option>
+									  		<option value="B" {if $peserta.akreditasi=='B'}selected{/if}>B</option>
+									  		<option value="C" {if $peserta.akreditasi=='C'}selected{/if}>C</option>
+									  		<option value="Diakui/Disamakan" {if $peserta.akreditasi=='Diakui/Disamakan'}selected{/if}>Diakui/Disamakan</option>
+									  		<option value="Tidak Tahu" {if $peserta.akreditasi=='Tidak Tahu'}selected{/if}>Tidak Tahu</option>
+									  	</select>
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Score</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused akreditasi_score" id="prependedInput1" name="akreditasi_score" type="text" value="{$peserta.akreditasi_score}">
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Total Score</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused akreditasi_total_score" id="prependedInput1" name="akreditasi_total" type="text" value="{$peserta.akreditasi_total}" onclick='setNilai("akreditasi")'>
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Bobot</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused akreditasi_bobot" id="prependedInput1" name="akreditasi_bobot" type="text" value="{$peserta.akreditasi_bobot}" onclick='setNilai("akreditasi")'>
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Nilai Akhir</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused akreditasi_nilai_akhir" id="prependedInput1" name="akreditasi_nilai_akhir" type="text" value="{$peserta.akreditasi_nilai_akhir}" readonly="readonly">
+									</div>
+							  	</div>
+
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Predikat Kelulusan</label>
+									<div class="controls">
+									  	<select class="kelulusan" name="kelulusan">
+									  		<option value="1" {if $peserta.kelulusan=='Summa Cum Laude'}selected{/if}>Summa Cum Laude</option>
+									  		<option value="2" {if $peserta.kelulusan=='Cum Laude'}selected{/if}>Cum Laude</option>
+									  		<option value="3" {if $peserta.kelulusan=='Sangat Memuaskan'}selected{/if}>Sangat Memuaskan</option>
+									  		<option value="4" {if $peserta.kelulusan=='Memuaskan'}selected{/if}>Memuaskan</option>
+									  		<option value="5" {if $peserta.kelulusan=='Baik'}selected{/if}>Baik</option>
+									  	</select>
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Score</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused kelulusan_score" id="prependedInput1" name="kelulusan_score" type="text" value="{$peserta.kelulusan_score}">
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Total Score</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused kelulusan_total_score" id="prependedInput1" name="kelulusan_total" type="text" value="{$peserta.kelulusan_total}" onclick='setNilai("kelulusan")'>
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Bobot</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused kelulusan_bobot" id="prependedInput1" name="kelulusan_bobot" type="text" value="{$peserta.kelulusan_bobot}" onclick='setNilai("kelulusan")'>
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Nilai Akhir</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused kelulusan_nilai_akhir" id="prependedInput1" name="kelulusan_nilai_akhir" type="text" value="{$peserta.kelulusan_nilai_akhir}" readonly="readonly">
+									</div>
+							  	</div>
+
+
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Prestasi Akademik</label>
+									<div class="controls">
+									  	<select class="prestasi" name="prestasi">
+									  		<option value="1" {if $peserta.prestasi_score=='4'}selected{/if}>Juara internasional (1-3)</option>
+									  		<option value="2" {if $peserta.prestasi_score=='3'}selected{/if}>Juara nasional (1-3)/Juara internasional (non grade)</option>
+									  		<option value="1" {if $peserta.prestasi_score=='2'}selected{/if}>Juara propinsi/daerah (1-3)/Juara nasional (non grade)</option>
+									  		<option value="1" {if $peserta.prestasi_score=='1'}selected{/if}>Tidak ada prestasi</option>
+									  	</select>
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Score</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused prestasi_score" id="prependedInput1" name="prestasi_score" type="text" value="{$peserta.prestasi_score}">
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Total Score</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused prestasi_total_score" id="prependedInput1" name="prestasi_total" type="text" value="{$peserta.prestasi_total}" onclick='setNilai("prestasi")'>
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Bobot</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused prestasi_bobot" id="prependedInput1" name="prestasi_bobot" type="text" value="{$peserta.prestasi_bobot}" onclick='setNilai("prestasi")'>
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Nilai Akhir</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused prestasi_nilai_akhir" id="prependedInput1" name="prestasi_nilai_akhir" type="text" value="{$peserta.prestasi_nilai_akhir}" readonly="readonly">
+									</div>
+							  	</div>
+							  	</fieldset>
+								
+							  
+							</fieldset>
+
+							<fieldset>
+							  		<legend>Data Pendukung Non Akademik</legend>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Pelatihan</label>
+									<div class="controls">
+									  	<select class="pelatihan" name="pelatihan">
+									  		<option value="1" {if $peserta.pelatihan_score=='4'}selected{/if}>Pelatihan Luar Negeri Sesuai Bidang</option>
+									  		<option value="2" {if $peserta.pelatihan_score=='3'}selected{/if}>Pelatihan Dalam Negeri Sesuai Bidang</option>
+									  		<option value="2" {if $peserta.pelatihan_score=='2'}selected{/if}>Pelatihan Luar Negeri Tdk Sesuai Bidang</option>
+									  		<option value="2" {if $peserta.pelatihan_score=='1'}selected{/if}>Pelatihan Dalam Negeri Tdk Sesuai Bidang</option>
+									  		
+									  	</select>
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Score</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused pelatihan_score" id="prependedInput1" name="pelatihan_score" type="text" value="{$peserta.pelatihan_score}">
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Total Score</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused pelatihan_total_score" id="prependedInput1" name="pelatihan_total" type="text" value="{$peserta.pelatihan_total}" onclick='setNilai("pelatihan")'>
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Bobot</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused pelatihan_bobot" id="prependedInput1" name="pelatihan_bobot" type="text" value="{$peserta.pelatihan_bobot}" onclick='setNilai("pelatihan")'>
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Nilai Akhir</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused pelatihan_nilai_akhir" id="prependedInput1" name="pelatihan_nilai_akhir" type="text" value="{$peserta.pelatihan_nilai_akhir}" readonly="readonly">
+									</div>
+							  	</div>
+
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Kejuaraan</label>
+									<div class="controls">
+									  	<select class="kejuaraan" name="kejuaraan">
+									  		<option value="1" {if $peserta.kejuaraan_score=='5'}selected{/if}>Juara 1 Skala Internasional</option>
+									  		<option value="2" {if $peserta.kejuaraan_score=='4'}selected{/if}>Juara 2 Skala Internasional</option>
+									  		<option value="2" {if $peserta.kejuaraan_score=='3'}selected{/if}>Juara 3 Skala Internasional</option>
+									  		<option value="2" {if $peserta.kejuaraan_score=='4'}selected{/if}>Juara 1 Skala Nasional</option>
+									  		<option value="2" {if $peserta.kejuaraan_score=='3'}selected{/if}>Juara 2 Skala Nasional</option>
+									  		<option value="2" {if $peserta.kejuaraan_score=='2'}selected{/if}>Juara 3 Skala Nasional</option>
+									  	</select>
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Score</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused kejuaraan_score" id="prependedInput1" name="kejuaraan_score" type="text" value="{$peserta.kejuaraan_score}">
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Total Score</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused kejuaraan_total_score" id="prependedInput1" name="kejuaraan_total" type="text" value="{$peserta.kejuaraan_total}" onclick='setNilai("kejuaraan")'>
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Bobot</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused kejuaraan_bobot" id="prependedInput1" name="kejuaraan_bobot" type="text" value="{$peserta.kejuaraan_bobot}" onclick='setNilai("kejuaraan")'>
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Nilai Akhir</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused kejuaraan_nilai_akhir" id="prependedInput1" name="kejuaraan_nilai_akhir" type="text" value="{$peserta.kejuaraan_nilai_akhir}" readonly="readonly">
+									</div>
+							  	</div>
+
+
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Organisasi</label>
+									<div class="controls">
+									  	<select class="organisasi" name="organisasi">
+									  		<option value="1" {if $peserta.organisasi_score=='5'}selected{/if}>sbg Ketua organisasi Nasional</option>
+									  		<option value="2" {if $peserta.organisasi_score=='4'}selected{/if}>sbg Komite organisasi Nasional</option>
+									  		<option value="1" {if $peserta.organisasi_score=='3'}selected{/if}>sbg Anggota organisasi Nasional</option>
+									  		<option value="1" {if $peserta.organisasi_score=='4'}selected{/if}>sbg Ketua organisasi PT</option>
+									  		<option value="1" {if $peserta.organisasi_score=='3'}selected{/if}>sbg Komite organisasi PT</option>
+									  		<option value="1" {if $peserta.organisasi_score=='2'}selected{/if}>sbg Anggota organisasi PT</option>
+									  	</select>
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Score</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused organisasi_score" id="prependedInput1" name="organisasi_score" type="text" value="{$peserta.organisasi_score}">
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Total Score</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused organisasi_total_score" id="prependedInput1" name="organisasi_total" type="text" value="{$peserta.organisasi_total}" onclick='setNilai("organisasi")'>
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Bobot</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused organisasi_bobot" id="prependedInput1" name="organisasi_bobot" type="text" value="{$peserta.organisasi_bobot}" onclick='setNilai("organisasi")'>
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Nilai Akhir</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused organisasi_nilai_akhir" id="prependedInput1" name="organisasi_nilai_akhir" type="text" value="{$peserta.organisasi_nilai_akhir}" readonly="readonly">
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Pengalaman</label>
+									<div class="controls">
+									  	<select class="pengalaman" name="pengalaman">
+									  		<option value="1" {if $peserta.pengalaman_score=='5'}selected{/if}>sbg  Pimpinan Perusahaan/Penelitian</option>
+									  		<option value="2" {if $peserta.pengalaman_score=='4'}selected{/if}>sbg  Wakil Pimpinan Perusahaan/Penelitian</option>
+									  		<option value="1" {if $peserta.pengalaman_score=='3'}selected{/if}>sbg  Anggota Perusahaan/Penelitian</option>
+									  		<option value="1" {if $peserta.pengalaman_score=='4'}selected{/if}>sbg  Pengawas Perusahaan/Penelitian</option>
+									  		<option value="1" {if $peserta.pengalaman_score=='3'}selected{/if}>sbg  Wakil Pengawas Perusahaan/Penelitian</option>
+									  		<option value="1" {if $peserta.pengalaman_score=='2'}selected{/if}>sbg  Anggota Pengawas Perusahaan/Penelitian</option>
+									  	</select>
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Score</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused toeic_score" id="prependedInput1" name="pengalaman_score" type="text" value="{$peserta.pengalaman_score}">
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Total Score</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused pengalaman_total_score" id="prependedInput1" name="pengalaman_total" type="text" value="{$peserta.pengalaman_total}" onclick='setNilai("pengalaman")'>
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Bobot</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused pengalaman_bobot" id="prependedInput1" name="pengalaman_bobot" type="text" value="{$peserta.pengalaman_bobot}" onclick='setNilai("pengalaman")'>
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Nilai Akhir</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused pengalaman_nilai_akhir" id="prependedInput1" name="pengalaman_nilai_akhir" type="text" value="{$peserta.pengalaman_nilai_akhir}" readonly="readonly">
+									</div>
+							  	</div>
+
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Pengalaman Penelitian / Riset / Publikasi</label>
+									<div class="controls">
+									  	<select class="riset" name="riset">
+									  		<option value="1" {if $peserta.riset_score=='4'}selected{/if}>Jurnal artikel internasional (grup)</option>
+									  		<option value="2" {if $peserta.riset_score=='3'}selected{/if}>Jurnal artikel internasional (individu)</option>
+									  		<option value="1" {if $peserta.riset_score=='2'}selected{/if}>Jurnal artikel /Koran/Media Massa Nasional</option>
+									  		<option value="1" {if $peserta.riset_score=='1'}selected{/if}>Jurnal artikel /Koran/Media Massa Lokal</option>
+									  	</select>
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Score</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused toeic_score" id="prependedInput1" name="riset_score" type="text" value="{$peserta.riset_score}">
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Total Score</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused riset_total_score" id="prependedInput1" name="riset_total" type="text" value="{$peserta.riset_total}" onclick='setNilai("riset")'>
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Bobot</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused riset_bobot" id="prependedInput1" name="riset_bobot" type="text" value="{$peserta.riset_bobot}" onclick='setNilai("riset")'>
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Nilai Akhir</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused riset_nilai_akhir" id="prependedInput1" name="riset_nilai_akhir" type="text" value="{$peserta.riset_nilai_akhir}" readonly="readonly">
+									</div>
+							  	</div>
+
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Rekomendasi</label>
+									<div class="controls">
+									  	<select class="rekomendasi" name="rekomendasi">
+									  		<option value="1" {if $peserta.rekomendasi_score =='3'}selected{/if}>Dari  Rektor/Pimpinan/Pejabat Pemerintah</option>
+									  		<option value="2" {if $peserta.rekomendasi_score=='2'}selected{/if}>Dari  Kadiv/Kabag/ perusahaan/Pemerintahan</option>
+									  		<option value="1" {if $peserta.rekomendasi_score=='1'}selected{/if}>Dari  Independen (Tokoh dll)</option>
+									  	</select>
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Score</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused rekomendasi_score" id="prependedInput1" name="rekomendasi_score" type="text" value="{$peserta.rekomendasi_score}">
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Total Score</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused rekomendasi_total_score" id="prependedInput1" name="rekomendasi_total" type="text" value="{$peserta.rekomendasi_total}" onclick='setNilai("rekomendasi")'>
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Bobot</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused rekomendasi_bobot" id="prependedInput1" name="rekomendasi_bobot" type="text" value="{$peserta.rekomendasi_bobot}" onclick='setNilai("rekomendasi")'>
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Nilai Akhir</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused rekomendasi_nilai_akhir" id="prependedInput1" name="rekomendasi_nilai_akhir" type="text" value="{$peserta.rekomendasi_nilai_akhir}" readonly="readonly">
+									</div>
+							  	</div>
+							  	</fieldset>
+								
+							  
+							</fieldset>
+
+							<fieldset>
+							  		<legend>Rincian</legend>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Total Bobot</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused rekap_total_bobot" id="prependedInput1" name="rekap_total_bobot" type="text" value="{$peserta.rekap_total_bobot}" readonly="readonly">
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">Total Score</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused rekap_total_score" id="prependedInput1" name="rekap_total_score" type="text" value="{$peserta.rekap_total_score}" readonly="readonly">
+									</div>
+							  	</div>
+							  	{*}
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput">TT Reviewer</label>
+									<div class="controls">
+									  	<input class="input-xlarge focused ttd_reviewer" id="prependedInput1" name="ttd_reviewer" type="file" value="">
+									</div>
+							  	</div>
+							  	<div class="control-group">
+									<label class="control-label" for="focusedInput"></label>
+									<div class="controls">
+									  	<img src="{$app_domain}public_assets/{$peserta.ttd}"/>
+									</div>
+							  	</div>
+							  	{/*}
+							  	
+							  
+							</fieldset>
+
+							<div class="form-actions">
+								<button class="btn btn-primary" id="backtolist" type='button'>Back to list</button>
+								<input type="hidden" name="token" value="1"/>
+								<input type="hidden" name="idpeserta" value="{$peserta.id}"/>
+								<button class="btn btn-primary" id="savebutton" type="submit">Save</button>
+								</div>
+						  </div>
+					
+					</div>
+				</div><!--/span-->
+			
+			</div><!--/row-->
+			</form>
+			
+					<!-- content ends -->
+			</div><!--/#content.span10-->
+{literal}
+	<script>
+		$('#backtolist').click(function(){
+			
+			window.location.href=basedomain+'review';
+		})
+
+		$(document).on('click','#savebutton', function(){
+
+			var conf = confirm('Data sudah valid ?');
+			if (!conf) return false;
+
+		})
+
+		function nilaiTotal()
+		{
+
+			var jalur_nilai_akhir = parseFloat($('.jalur_nilai_akhir').val());
+			var toefl_nilai_akhir = parseFloat($('.toefl_nilai_akhir').val());
+			var toeic_nilai_akhir = parseFloat($('.toeic_nilai_akhir').val());
+			var akreditasi_nilai_akhir = parseFloat($('.akreditasi_nilai_akhir').val());
+			var kelulusan_nilai_akhir = parseFloat($('.kelulusan_nilai_akhir').val());
+			var prestasi_nilai_akhir = parseFloat($('.prestasi_nilai_akhir').val());
+			var pelatihan_nilai_akhir = parseFloat($('.pelatihan_nilai_akhir').val());
+			var kejuaraan_nilai_akhir = parseFloat($('.kejuaraan_nilai_akhir').val());
+			var organisasi_nilai_akhir = parseFloat($('.organisasi_nilai_akhir').val());
+			var pengalaman_nilai_akhir = parseFloat($('.pengalaman_nilai_akhir').val());
+			var riset_nilai_akhir = parseFloat($('.riset_nilai_akhir').val());
+			var rekomendasi_nilai_akhir = parseFloat($('.rekomendasi_nilai_akhir').val());
+			
+
+			var total = jalur_nilai_akhir+toefl_nilai_akhir+toeic_nilai_akhir+akreditasi_nilai_akhir+kelulusan_nilai_akhir+prestasi_nilai_akhir+pelatihan_nilai_akhir+kejuaraan_nilai_akhir+organisasi_nilai_akhir+pengalaman_nilai_akhir+riset_nilai_akhir+rekomendasi_nilai_akhir;
+			console.log(total);
+			$('.rekap_total_score').val(Math.round(total * 100) / 100);
+		}
+			
+
+
+		
+
+		function setNilai(prefix)
+		{
+
+			$('.'+prefix+'_bobot').keyup(function(){
+
+				var jalur_bobot = ($(this).val()/100 ) * $('.'+prefix+'_total_score').val();
+
+				$('.'+prefix+'_nilai_akhir').val(jalur_bobot);
+
+				nilaiTotal();
+			})
+			$('.'+prefix+'_total_score').keyup(function(){
+
+				var jalur_bobot = ($(this).val()/100 ) * $('.'+prefix+'_bobot').val();
+
+				$('.'+prefix+'_nilai_akhir').val(jalur_bobot);
+
+				nilaiTotal();
+			})
+
+
+		}
+
+
+		/*
+		$('.jalur_total_score').keyup(function(){
+
+			var jalur_bobot = ($(this).val()/100 ) * $('.jalur_bobot').val();
+
+			$('.jalur_nilai_akhir').val(jalur_bobot);
+		})
+
+		$('.toefl_bobot').keyup(function(){
+
+			var toefl_bobot = ($(this).val()/100 ) * $('.toefl_total_score').val();
+
+			$('.toefl_nilai_akhir').val(toefl_bobot);
+		})
+		$('.toefl_total_score').keyup(function(){
+
+			var toefl_bobot = ($(this).val()/100 ) * $('.toefl_bobot').val();
+
+			$('.toefl_nilai_akhir').val(toefl_bobot);
+		})
+
+		$('.toeic_bobot').keyup(function(){
+
+			var toeic_bobot = ($(this).val()/100 ) * $('.toeic_total_score').val();
+
+			$('.toeic_nilai_akhir').val(toeic_bobot);
+		})
+		$('.toeic_total_score').keyup(function(){
+
+			var toeic_bobot = ($(this).val()/100 ) * $('.toeic_bobot').val();
+
+			$('.toeic_nilai_akhir').val(toeic_bobot);
+		})
+
+		$('.akreditasi_bobot').keyup(function(){
+
+			var toeic_bobot = ($(this).val()/100 ) * $('.akreditasi_total_score').val();
+
+			$('.akreditasi_nilai_akhir').val(toeic_bobot);
+		})
+		$('.akreditasi_total_score').keyup(function(){
+
+			var toeic_bobot = ($(this).val()/100 ) * $('.akreditasi_bobot').val();
+
+			$('.akreditasi_nilai_akhir').val(toeic_bobot);
+		})
+		
+
+		kelulusan_bobot
+		*/
+		
+	</script>
+{/literal}

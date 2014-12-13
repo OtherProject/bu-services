@@ -1,0 +1,82 @@
+<br>
+<section>
+   <div class="container">  
+<form method="post" action="{$basedomain}register/accountValid">
+
+<div class="content-container">
+<div class="row">
+
+  
+    <div class="col-md-6">
+        <div class="portlet">
+        
+          <div class="portlet-header">
+
+            <h3>
+              <i class="fa fa-file"></i>
+              Penanggung jawab account
+            </h3>
+
+          </div> <!-- /.portlet-header -->
+        
+          <div class="portlet-content">
+        
+            <div class="col-sm-6">
+              <div class="form-group">
+              <label for="text-input">Password</label>
+                  <input type="password" name="password" class="form-control" value="{$data.merek}" data-required="true" />
+              </div>
+            </div>  
+            <div class="col-sm-6">
+              <div class="form-group">
+              <label for="text-input">Retype Password</label>
+                  <input type="password" name="repassword" class="form-control" value="{$data.merek}" data-required="true" />
+              </div>
+            </div>  
+            
+            
+          </div>
+        </div>
+      </div>
+
+    
+      
+
+      <div class="col-md-6">
+        <div class="portlet">
+        
+          <div class="portlet-header">
+
+            <h3>
+              <i class="fa fa-file"></i>
+              App Desctiption
+            </h3>
+
+          </div> <!-- /.portlet-header -->
+        
+          <div class="portlet-content">
+        
+            <div class="col-sm-12">
+              <div class="form-group">
+              <label for="text-input">Nama Aplikasi</label>
+                  <input type="text" name="namaIndustri" class="form-control" value="{$data.appName}" disabled />
+              </div>
+            </div>  
+            
+          </div>
+        </div>
+    </div>  
+
+      </div>
+      <br>
+      <button id="btn-dis" class="btn btn-info" type="submit">
+      <i class="fa fa-save"></i>
+      Simpan Data
+      </button>
+      <input type="hidden" name="token" value="{$token}">
+      
+</div>
+
+</form>
+</div>
+</section>

@@ -1,0 +1,210 @@
+
+<script type="text/javascript">
+
+  {literal}
+
+  	$(function () {
+		$('#postdate1').datepicker ();
+		$('#expiredate1').datepicker ();
+		
+		$("#isi").jqte();
+		
+
+	})
+
+    $(document).on('change', '.pilihmerek', function(){
+
+
+      var id = $(this).val();
+
+      $.post(basedomain+'evaluasi/ajax',{merek:id}, function(data){
+
+        var html = "";
+
+        if (data.status==true){
+
+
+        	$('.namaprodusen').val(data.res[0].produsen);
+        	$('.jenisrokok').val(data.res[0].jenis);
+        	$('.alamatprodusen').val(data.res[0].alamat);
+        	
+          
+        } 
+        
+      }, "JSON")  
+
+    })
+  {/literal}
+</script>
+
+
+<div id="content-header">
+	<h1>Detail Evaluasi</h1>
+</div> <!-- #content-header -->	
+
+<div id="content-container">
+
+	{if $status}
+		<div class="alert alert-success" role="alert">Data berhasil disimpan</div>
+	{/if}
+	<form id="validate-enhanced" class="form parsley-form" method="post" action="" enctype="multipart/form-data">
+		
+		{if !$disableData}
+		<button type="submit" class="btn btn-info" id="btn-dis"><i class="fa fa-save"></i> Approved</button>
+
+		{if $admin.type==2}
+		<button type="submit" class="btn btn-danger" id="btn-dis" name="reject" value="1"><i class="fa fa-multiply"></i>Rejected</button>
+			{*}
+		<a href="{$basedomain}pelaporan/detailnikotin/?id={$id}&act=1" ><button type="button" class="btn btn-danger" id="btn-dis"><i class="fa fa-multiply"></i> Rejected</button></a>{/*}
+		{/if}
+		{/if}
+		<input type="hidden" name="idPelaporan" value="{$id}">
+
+		<div class="portlet">
+			
+		</div>
+
+		<div class="row" style="margin-top:10px;">
+			<div class="col-md-12">
+				<div class="span6" style="border:1px solid #bbb;border-radius:10px;padding:10px 20px 10px 20px;">
+					<table class="table">
+						
+						<thead>
+						<tr>
+							
+							<th align="center">Item</th>
+							<th align="center">Hasil</th>
+							
+						</tr>
+						</thead>
+						<tbody>
+						
+						<tr>
+							
+							<td>Nama Merek Rokok</td>
+							<td><input type="text" name="merek" class="form-control namaprodusen" value="{$data.merek}" disabled/></td>
+							
+						</tr>
+						<tr>
+							
+							<td>Nama Produsen / Importir</td>
+							<td><input type="text" name="produsen" class="form-control namaprodusen" value="{$data.namaIndustri}" disabled/></td>
+							
+						</tr>
+						<tr>
+							
+							<td>Lokasi</td>
+							<td><input type="text" name="produsen" class="form-control namaprodusen" value="{$data.namaProvinsi[0].nama_wilayah}" disabled/></td>
+							
+						</tr>
+						<tr>
+							
+							<td>Jenis Rokok</td>
+							<td><input type="text" name="jenis" class="form-control jenisrokok" value="{$data.d_jenisRokok}" {$data.dataDisabled}/></td>
+							
+						</tr>
+						<tr>
+							
+							<td>Nomor/Kode Sampel</td>
+							<td><input type="text" name="kodeSample" class="form-control jenisrokok" value="{$data.kodeSample}" {$data.dataDisabled}/></td>
+							
+						</tr>
+						<tr>
+							
+							<td>Isi Kemasan</td>
+							<td><input type="text" name="isiKemasan" class="form-control jenisrokok" value="{$data.d_isiKemasan}" {$data.dataDisabled}/></td>
+							
+						</tr>
+						<tr>
+							
+							<td>Nama Laboratorium</td>
+							<td><input type="text" name="namaLab" class="form-control jenisrokok" value="{$data.namaLab}" {$data.dataDisabled}/></td>
+							
+						</tr>
+						<tr>
+							
+							<td>Penanggungjawab Laboratorium</td>
+							<td><input type="text" name="penanggungjawab" class="form-control jenisrokok" value="{$data.penanggungjawab}" {$data.dataDisabled}/></td>
+							
+						</tr>
+						<tr>
+							
+							<td>Nomor Lap Hasil Uji/Sertifikat</td>
+							<td><input type="text" name="noSertifikat" class="form-control jenisrokok" value="{$data.noSertifikat}" {$data.dataDisabled}/></td>
+							
+						</tr>
+						<tr>
+							
+							<td>Tanggal pengujian</td>
+							<td><input type="text" name="tanggalUji" class="form-control jenisrokok" value="{$data.tanggalUji}" {$data.dataDisabled}/></td>
+							
+						</tr>
+						<tr>
+							
+							<td>Kadar Nikotin</td>
+							<td><input type="text" name="kadarNikotin" class="form-control jenisrokok" value="{$data.kadarNikotin}" {$data.dataDisabled}/></td>
+							
+						</tr>
+						<tr>
+							
+							<td>Kadar Tar Coresta/Tar ISO</td>
+							<td><input type="text" name="kadarTar" class="form-control jenisrokok" value="{$data.kadarTar}" {$data.dataDisabled}/></td>
+							
+						</tr>
+						<tr>
+							
+							<td>Kadar Tar SNI/ Tar Kretek</td>
+							<td><input type="text" name="kadarKretek" class="form-control jenisrokok" value="{$data.kadarKretek}" {$data.dataDisabled}/></td>
+							
+						</tr>
+						<tr>
+							
+							<td>Sertifikat pengujian</td>
+							<td>
+								<div class="col-xs-11 col-sm-4 col-md-3" style="{if $key==4}clear:both{/if}">
+								<div class="recent-work-wrap">
+			                        
+			                        <div class="overlay">
+			                            <div class="recent-work-inner">
+			                                
+			                                <a class="preview" href="{$app_domain}public_assets/{$data.sertifikat}" rel="prettyPhoto">
+			                                	<img src="{$app_domain}public_assets/{$data.sertifikat}" width="200px"/> </a>
+			                            </div> 
+			                        </div>
+			                        <p><a href="{$app_domain}public_assets/{$data.sertifikat}" target="_blank">{$val.title}</a> </p>
+			                    </div>
+								</div>
+								{*}
+								<img src="{$app_domain}public_assets/{$data.sertifikat}" width="200px" height="200px">
+								{/*}
+								</td>
+							
+						</tr>
+						{if $admin.type==2}
+						<tr>
+							
+							<td>Catatan Jika Ditolak</td>
+							<td><input type="text" name="catatanDitolak" class="form-control namaprodusen" value="{$data.catatanDitolak}" /></td>
+							
+						</tr>
+						{/if}
+
+						{if $admin.type==3 and $data.catatanDitolak!=''}
+						<tr>
+							
+							<td>Catatan Jika Ditolak</td>
+							<td><input type="text" name="catatanDitolak" class="form-control namaprodusen" value="{$data.catatanDitolak}" disabled/></td>
+							
+						</tr>
+						{/if}
+						</tbody>
+					</table>
+					
+				</div>
+			</div>
+		</div>
+
+		
+	
+	</form>
+</div>

@@ -1,0 +1,3 @@
+load excel success
+parse data excel success
+clean data
